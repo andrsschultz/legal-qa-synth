@@ -1,0 +1,56 @@
+{
+  "question_answer_pairs": [
+    {
+      "question_text": "Die Finanzbehörde fordert im Rahmen einer Außenprüfung am 15.08.2014 den Steuerberater S auf, bestimmte Buchführungsunterlagen seines Mandanten vorzulegen. S ist selbst nicht Beteiligter des Steuerverfahrens. Er fragt, ob er für die Erfüllung dieser Vorlagepflicht eine Entschädigung nach dem Justizvergütungs- und -entschädigungsgesetz beanspruchen kann. Steht S für die am 15.08.2014 erfüllte Vorlagepflicht ein Entschädigungsanspruch zu?",
+      "answer_text": "Ja. Am 15.08.2014 galt die Fassung des § 107 AO, die ausdrücklich auch Vorlagepflichtige erfasst. Da S als nicht am Verfahren Beteiligter von der Finanzbehörde zu Beweiszwecken herangezogen wurde, hat er auf Antrag Anspruch auf Entschädigung in entsprechender Anwendung des Justizvergütungs- und -entschädigungsgesetzes.",
+      "legal_basis": [
+        {
+          "law": "AO",
+          "citation": "§ 107 AO",
+          "version_valid_from": "2013-06-30",
+          "version_valid_to": null
+        }
+      ],
+      "relevant_fact_date": "2014-08-15",
+      "source_versions": [
+        {
+          "file": "AO_107_vorgaenger",
+          "valid_from": null,
+          "valid_to": "2013-06-30"
+        },
+        {
+          "file": "AO_107_nachfolger",
+          "valid_from": "2013-06-30",
+          "valid_to": null
+        }
+      ]
+    }
+  ],
+  "source_versions": [
+    {
+      "file": "data/AO/s107/ao_s107_until_2013-06-30.json",
+      "valid_from": null,
+      "valid_to": "2013-06-30"
+    },
+    {
+      "file": "data/AO/s107/ao_s107_current.json",
+      "valid_from": "2013-06-30",
+      "valid_to": null
+    }
+  ],
+  "legal_basis": [
+    {
+      "law": "AO",
+      "citation": "§ 107 AO",
+      "version_valid_from": "2013-06-30",
+      "version_valid_to": null
+    }
+  ],
+  "relevant_fact_date": "2013-06-30",
+  "validation": {
+    "status": "fail",
+    "issues": [
+      "Duplicate question_text in run"
+    ]
+  }
+}

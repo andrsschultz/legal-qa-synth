@@ -1,0 +1,62 @@
+{
+  "question_answer_pairs": [
+    {
+      "question_text": "Das Bundesministerium der Finanzen (BMF) möchte am 15.02.2024 eine völkerrechtliche Vereinbarung über die gegenseitige Rechts- und Amtshilfe auf dem Gebiet des Zollwesens durch Rechtsverordnung in Kraft setzen und dabei zugleich klarstellen, dass § 2a Absatz 5 Nummer 2 AO einer Inanspruchnahme der zwischenstaatlichen Amtshilfe nicht entgegenstehen soll. Kann sich das BMF für dieses Vorgehen am 15.02.2024 auf eine ausdrückliche gesetzliche Regelung stützen?",
+      "answer_text": "Am 15.02.2024 kann sich das Bundesministerium der Finanzen ausdrücklich auf § 117 AO Abs. 6 stützen, wonach § 2a Absatz 5 Nummer 2 AO nicht gilt, soweit seine Anwendung der Inanspruchnahme oder der Leistung der zwischenstaatlichen Amtshilfe entgegensteht; daneben bleibt die Ermächtigung des § 117 AO Abs. 5 zur Inkraftsetzung völkerrechtlicher Vereinbarungen über die gegenseitige Rechts- und Amtshilfe im Zollwesen durch Rechtsverordnung mit Zustimmung des Bundesrates anwendbar.",
+      "legal_basis": [
+        {
+          "law": "AO",
+          "citation": "§ 117 AO Abs. 5",
+          "version_valid_from": "2024-01-01",
+          "version_valid_to": "2024-03-28"
+        },
+        {
+          "law": "AO",
+          "citation": "§ 117 AO Abs. 6",
+          "version_valid_from": "2024-01-01",
+          "version_valid_to": "2024-03-28"
+        }
+      ],
+      "relevant_fact_date": "2024-02-15",
+      "source_versions": [
+        {
+          "file": "AO_117_vorgaenger.json",
+          "valid_from": "2013-01-01",
+          "valid_to": "2024-01-01"
+        },
+        {
+          "file": "AO_117_nachfolger.json",
+          "valid_from": "2024-01-01",
+          "valid_to": "2024-03-28"
+        }
+      ]
+    }
+  ],
+  "source_versions": [
+    {
+      "file": "data/AO/s117/ao_s117_until_2024-01-01.json",
+      "valid_from": "2013-01-01",
+      "valid_to": "2024-01-01"
+    },
+    {
+      "file": "data/AO/s117/ao_s117_until_2024-03-28.json",
+      "valid_from": "2024-01-01",
+      "valid_to": "2024-03-28"
+    }
+  ],
+  "legal_basis": [
+    {
+      "law": "AO",
+      "citation": "§ 117 AO",
+      "version_valid_from": "2024-01-01",
+      "version_valid_to": "2024-03-28"
+    }
+  ],
+  "relevant_fact_date": "2024-02-13",
+  "validation": {
+    "status": "fail",
+    "issues": [
+      "Duplicate question_text in run"
+    ]
+  }
+}

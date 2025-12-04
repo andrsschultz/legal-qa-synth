@@ -167,6 +167,19 @@ def render_prompt(
     )
 
 
+def build_classification_prompt(v1: VersionFile, v2: VersionFile) -> str:
+    return (
+        "Bewerte, ob zwischen zwei Fassungen derselben Vorschrift eine inhaltliche (materielle) Änderung vorliegt.\n"
+        "Antwort als JSON-Objekt: {\"substantive_change\": true|false, \"reason\": \"kurze Begründung\"}.\n"
+        "Inhaltliche Änderung = neue/entfernte Rechte/Pflichten, geänderte Voraussetzungen, Fristen, Schwellen, Prozentsätze, Beträge, Zuständigkeiten.\n"
+        "Redaktionell = reine Format-, Verweis- oder Begriffs-Anpassungen ohne sachliche Änderung.\n\n"
+        f"Fassung A (valid_from={v1.valid_from}, valid_to={v1.valid_to}):\n"
+        f"{json.dumps(v1.content, ensure_ascii=False, indent=2)}\n\n"
+        f"Fassung B (valid_from={v2.valid_from}, valid_to={v2.valid_to}):\n"
+        f"{json.dumps(v2.content, ensure_ascii=False, indent=2)}\n"
+    )
+
+
 class LLMClient:
     def __init__(
         self,
@@ -179,6 +192,28 @@ class LLMClient:
         self.api_key = api_key
         if not api_key:
             raise RuntimeError("OPENAI_API_KEY is missing; set it in .env or the environment.")
+
+    def classify_change(self, v1: VersionFile, v2: VersionFile, logger: "RunLogger") -> Tuple[bool, str]:
+        prompt = build_classification_prompt(v1, v2)
+        body = {
+            "model": self.model,
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Du bist ein Jurist, der Änderungen zwischen zwei Fassungen auf inhaltliche vs. redaktionelle Änderungen prüft. Antworte nur mit JSON.",
+                },
+                {"role": "user", "content": prompt},
+            ],
+            "temperature": 0,
+            "response_format": {"type": "json_object"},
+        }
+        logger.write("Sending classification prompt to LLM")
+        content = self._chat_completion(body, logger)
+        parsed = json.loads(content)
+        substantive = bool(parsed.get("substantive_change"))
+        reason = parsed.get("reason", "")
+        logger.write(f"Classification result: substantive_change={substantive}, reason={reason[:200]}")
+        return substantive, reason
 
     def generate(self, prompt: str, logger: "RunLogger") -> List[Dict[str, Any]]:
         body = {
@@ -357,13 +392,21 @@ def build_metadata(
     run_id: str,
     seed: int,
     qa_runs: List[Dict[str, Any]],
+    skipped: List[Dict[str, Any]],
+    requested_count: int,
+    generated_count: int,
+    shortfall_reason: Optional[str],
     prompt_settings: Dict[str, Any],
 ) -> Dict[str, Any]:
     return {
         "run_id": run_id,
         "created_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "random_seed": seed,
+        "requested_count": requested_count,
+        "generated_count": generated_count,
         "qa_runs": qa_runs,
+        "skipped": skipped,
+        "shortfall_reason": shortfall_reason,
         "prompt_settings": prompt_settings,
         "output_dir": str(run_dir),
     }
@@ -408,32 +451,57 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         api_key=api_key,
     )
     all_paragraphs = list_paragraphs_with_pairs()
-    if args.count > len(all_paragraphs):
-        logger.write(f"Requested {args.count} QAs but only {len(all_paragraphs)} unique paragraphs available.")
-        raise RuntimeError("Not enough unique paragraphs for requested count.")
     rng.shuffle(all_paragraphs)
+
+    if not all_paragraphs:
+        raise RuntimeError("No paragraphs available.")
 
     seen_questions: set[str] = set()
     qa_files: List[str] = []
     qa_runs_meta: List[Dict[str, Any]] = []
+    skipped_meta: List[Dict[str, Any]] = []
 
-    for idx in range(args.count):
-        paragraph_id = all_paragraphs[idx]
-        logger.write(f"QA #{idx+1}: paragraph -> {paragraph_id}")
+    paragraph_index = 0
+    qa_index = 0
+    while qa_index < args.count:
+        if paragraph_index >= len(all_paragraphs):
+            logger.write("Ran out of paragraphs after filtering editorial changes.")
+            raise RuntimeError("Not enough substantive paragraph changes to generate requested QAs.")
+        paragraph_id = all_paragraphs[paragraph_index]
+        paragraph_index += 1
+        logger.write(f"QA #{qa_index+1}: paragraph -> {paragraph_id}")
         version_pair = choose_consecutive_pair(paragraph_id, rng)
         logger.write(
-            f"QA #{idx+1}: versions {version_pair[0].path.name} -> {version_pair[1].path.name}"
+            f"QA #{qa_index+1}: versions {version_pair[0].path.name} -> {version_pair[1].path.name}"
         )
+
+        try:
+            substantive, reason = llm.classify_change(version_pair[0], version_pair[1], logger)
+        except Exception as exc:
+            logger.write(f"QA #{qa_index+1}: classification failed ({exc}); treating as substantive")
+            substantive, reason = True, f"classification_failed: {exc}"
+
+        if not substantive:
+            logger.write(f"QA #{qa_index+1}: classification says editorial ({reason}); skipping paragraph")
+            skipped_meta.append(
+                {
+                    "paragraph_id": paragraph_id,
+                    "versions_used": [version_pair[0].to_metadata(), version_pair[1].to_metadata()],
+                    "classification": {"substantive_change": False, "reason": reason},
+                }
+            )
+            continue
+
         prompt = render_prompt(version_pair[0], version_pair[1], paragraph_id, 1)
-        logger.write(f"QA #{idx+1}: rendered prompt ({len(prompt)} characters)")
+        logger.write(f"QA #{qa_index+1}: rendered prompt ({len(prompt)} characters)")
         try:
             llm_results = llm.generate(prompt, logger)
         except Exception as exc:
-            logger.write(f"QA #{idx+1}: LLM call failed: {exc}")
+            logger.write(f"QA #{qa_index+1}: LLM call failed: {exc}")
             raise
 
         if not llm_results:
-            logger.write(f"QA #{idx+1}: LLM returned no items")
+            logger.write(f"QA #{qa_index+1}: LLM returned no items")
             raise RuntimeError("LLM returned no items")
 
         qa = llm_results[0]
@@ -442,24 +510,27 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         ensure_fact_date_in_range(qa, version_pair[1])
         qa = validate_qa(qa, paragraph_id, version_pair[1].provision, version_pair, seen_questions)
         seen_questions.add((qa.get("question_text") or "").strip().lower())
-        qa_filename = run_dir / f"qa_{idx+1:04d}.json"
+        qa_filename = run_dir / f"qa_{qa_index+1:04d}.json"
         with open(qa_filename, "w", encoding="utf-8") as fh:
             json.dump(qa, fh, ensure_ascii=False, indent=2)
         qa_files.append(str(qa_filename))
-        logger.write(f"QA #{idx+1}: wrote {qa_filename.name} with status={qa['validation']['status']}")
+        logger.write(f"QA #{qa_index+1}: wrote {qa_filename.name} with status={qa['validation']['status']}")
         qa_runs_meta.append(
             {
                 "qa_file": qa_filename.name,
                 "paragraph_id": paragraph_id,
                 "versions_used": [version_pair[0].to_metadata(), version_pair[1].to_metadata()],
+                "classification": {"substantive_change": True, "reason": reason},
             }
         )
+        qa_index += 1
 
     metadata = build_metadata(
         run_dir=run_dir,
         run_id=run_id,
         seed=seed,
         qa_runs=qa_runs_meta,
+        skipped=skipped_meta,
         prompt_settings={
             "model": args.model,
             "temperature": args.temperature,

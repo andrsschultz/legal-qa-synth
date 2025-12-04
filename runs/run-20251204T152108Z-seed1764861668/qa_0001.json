@@ -1,0 +1,60 @@
+{
+  "question_answer_pairs": [
+    {
+      "question_text": "Ein Steuerberater S wird am 15.03.2020 vom Finanzamt im Rahmen eines Auskunftsersuchens nach § 102 AO zu einer von ihm im Jahr 2019 gestalteten grenzüberschreitenden Steuergestaltung befragt. Die begehrten Informationen betreffen Angaben, die unter § 138f Absatz 3 Satz 1 Nummer 1 und 4 bis 9 AO fallen und ermöglichen die Identifizierung der betroffenen Nutzer. Kann sich S für diesen Zeitpunkt (15.03.2020) gegenüber dem Finanzamt auf ein Auskunftsverweigerungsrecht berufen, soweit er sich allein darauf stützt, dass durch die Mitteilung die betroffenen Nutzer identifizierbar würden?",
+      "answer_text": "Am 15.03.2020 kann sich der Steuerberater S nicht mit Erfolg auf ein Auskunftsverweigerungsrecht allein wegen der Identifizierbarkeit der betroffenen Nutzer berufen. Nach der im März 2020 geltenden Fassung des § 102 AO besteht für die in § 102 AO Abs. 1 Nr. 3 Buchst. b AO genannten Personen eine ausdrückliche Mitteilungspflicht hinsichtlich der in § 138f Abs. 3 Satz 1 Nr. 1 und 4 bis 9 AO bezeichneten Angaben auch dann, wenn hierdurch betroffene Nutzer identifizierbar sind (§ 102 AO Abs. 4 Satz 3).",
+      "legal_basis": [
+        {
+          "law": "AO",
+          "citation": "§ 102 AO Abs. 1 Nr. 3 Buchst. b",
+          "version_valid_from": "2020-01-01",
+          "version_valid_to": "2020-09-01"
+        },
+        {
+          "law": "AO",
+          "citation": "§ 102 AO Abs. 4",
+          "version_valid_from": "2020-01-01",
+          "version_valid_to": "2020-09-01"
+        }
+      ],
+      "relevant_fact_date": "2020-03-15",
+      "source_versions": [
+        {
+          "file": "vorgaengerversion_ao_102.json",
+          "valid_from": "2007-08-18",
+          "valid_to": "2020-01-01"
+        },
+        {
+          "file": "nachfolgerversion_ao_102.json",
+          "valid_from": "2020-01-01",
+          "valid_to": "2020-09-01"
+        }
+      ]
+    }
+  ],
+  "source_versions": [
+    {
+      "file": "data/AO/s102/ao_s102_until_2020-01-01.json",
+      "valid_from": "2007-08-18",
+      "valid_to": "2020-01-01"
+    },
+    {
+      "file": "data/AO/s102/ao_s102_until_2020-09-01.json",
+      "valid_from": "2020-01-01",
+      "valid_to": "2020-09-01"
+    }
+  ],
+  "legal_basis": [
+    {
+      "law": "AO",
+      "citation": "§ 102 AO",
+      "version_valid_from": "2020-01-01",
+      "version_valid_to": "2020-09-01"
+    }
+  ],
+  "relevant_fact_date": "2020-05-02",
+  "validation": {
+    "status": "pass",
+    "issues": []
+  }
+}

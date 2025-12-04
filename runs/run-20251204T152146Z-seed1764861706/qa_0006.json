@@ -1,0 +1,68 @@
+{
+  "question_answer_pairs": [
+    {
+      "question_text": "Ein in Deutschland ansässiger Finanzdienstleister F verstößt am 10.01.2025 vorsätzlich gegen seine Pflicht zur Erhebung und Meldung bestimmter nach einem innerstaatlich anwendbaren völkerrechtlichen Abkommen erforderlicher Kundendaten, die nach diesem Abkommen dem Grunde nach von ihm als Drittem zu erheben und an das Bundeszentralamt für Steuern zu übermitteln wären. Kann dieser Verstoß nach der zu diesem Zeitpunkt geltenden Rechtslage als Ordnungswidrigkeit mit einem Bußgeld von bis zu 50.000 Euro geahndet werden, für dessen Verfolgung das Bundeszentralamt für Steuern als Verwaltungsbehörde zuständig ist?",
+      "answer_text": "Ja. Am 10.01.2025 gilt bereits die Fassung des § 117c AO, die ausdrücklich vorsieht, dass vorsätzliche und leichtfertige Verstöße der in den völkerrechtlichen Vereinbarungen dem Grunde nach bestimmten Dritten gegen Pflichten zur Erhebung und Meldung von Daten als Ordnungswidrigkeiten geahndet werden können und dass hierfür ein Bußgeld von bis zu 50.000 Euro festgesetzt werden darf; zuständige Verwaltungsbehörde ist das Bundeszentralamt für Steuern.",
+      "legal_basis": [
+        {
+          "law": "AO",
+          "citation": "§ 117c AO Abs. 1 Satz 1 Nr. 1",
+          "version_valid_from": "2024-12-06",
+          "version_valid_to": null
+        },
+        {
+          "law": "AO",
+          "citation": "§ 117c AO Abs. 1 Satz 1 Nr. 2",
+          "version_valid_from": "2024-12-06",
+          "version_valid_to": null
+        },
+        {
+          "law": "AO",
+          "citation": "§ 117c AO Abs. 1 Satz 1 Nr. 5",
+          "version_valid_from": "2024-12-06",
+          "version_valid_to": null
+        }
+      ],
+      "relevant_fact_date": "2025-01-10",
+      "source_versions": [
+        {
+          "file": "AO_117c_vorgaenger",
+          "valid_from": "2017-06-25",
+          "valid_to": "2024-12-06"
+        },
+        {
+          "file": "AO_117c_nachfolger",
+          "valid_from": "2024-12-06",
+          "valid_to": null
+        }
+      ]
+    }
+  ],
+  "source_versions": [
+    {
+      "file": "data/AO/s117c/ao_s117c_until_2024-12-06.json",
+      "valid_from": "2017-06-25",
+      "valid_to": "2024-12-06"
+    },
+    {
+      "file": "data/AO/s117c/ao_s117c_current.json",
+      "valid_from": "2024-12-06",
+      "valid_to": null
+    }
+  ],
+  "legal_basis": [
+    {
+      "law": "AO",
+      "citation": "§ 117c AO",
+      "version_valid_from": "2024-12-06",
+      "version_valid_to": null
+    }
+  ],
+  "relevant_fact_date": "2024-12-06",
+  "validation": {
+    "status": "fail",
+    "issues": [
+      "Duplicate question_text in run"
+    ]
+  }
+}

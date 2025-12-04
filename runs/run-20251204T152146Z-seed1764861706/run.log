@@ -1,0 +1,89 @@
+[2025-12-04T15:21:46.639292+00:00] Run started (seed=1764861706, model=gpt-5.1, temperature=0.4)
+[2025-12-04T15:21:46.640244+00:00] QA #1: paragraph -> s117a
+[2025-12-04T15:21:46.640686+00:00] QA #1: versions ao_s117a_until_2012-07-26.json -> ao_s117a_current.json
+[2025-12-04T15:21:46.640749+00:00] Sending classification prompt to LLM
+[2025-12-04T15:21:49.352126+00:00] Classification result: substantive_change=True, reason=In Fassung A existiert keine Regelung; Fassung B führt § 117a AO neu ein und schafft umfassende Befugnisse und Grenzen zur Übermittlung personenbezogener Daten an ausländische Stellen. Dies begründet 
+[2025-12-04T15:21:49.352896+00:00] QA #1: rendered prompt (8502 characters)
+[2025-12-04T15:21:49.353088+00:00] Sending prompt to LLM
+[2025-12-04T15:21:58.058925+00:00] LLM returned 1 items
+[2025-12-04T15:21:58.060365+00:00] QA #1: wrote qa_0001.json with status=pass
+[2025-12-04T15:21:58.060516+00:00] QA #2: paragraph -> s117b
+[2025-12-04T15:21:58.061742+00:00] QA #2: versions ao_s117b_until_2012-07-26.json -> ao_s117b_current.json
+[2025-12-04T15:21:58.061962+00:00] Sending classification prompt to LLM
+[2025-12-04T15:22:00.093876+00:00] Classification result: substantive_change=True, reason=In Fassung A existierte die Vorschrift nicht; Fassung B führt neue Regelungen zur Verwendung und Zweckbindung übermittelter Daten, zu Zustimmungserfordernissen, Auflagenbeachtung und Auskunftspflichte
+[2025-12-04T15:22:00.094505+00:00] QA #2: rendered prompt (3276 characters)
+[2025-12-04T15:22:00.094714+00:00] Sending prompt to LLM
+[2025-12-04T15:22:05.944266+00:00] LLM returned 1 items
+[2025-12-04T15:22:05.945704+00:00] QA #2: wrote qa_0002.json with status=pass
+[2025-12-04T15:22:05.945888+00:00] QA #3: paragraph -> s102
+[2025-12-04T15:22:05.947768+00:00] QA #3: versions ao_s102_until_2020-09-01.json -> ao_s102_current.json
+[2025-12-04T15:22:05.948110+00:00] Sending classification prompt to LLM
+[2025-12-04T15:22:08.488346+00:00] Classification result: substantive_change=True, reason=In Abs. 1 Nr. 3 Buchst. c wird der geschützte Personenkreis um 'Psychotherapeuten' erweitert und der einschränkende Zusatz 'über das, was ihnen in dieser Eigenschaft anvertraut worden oder bekannt gew
+[2025-12-04T15:22:08.489115+00:00] QA #3: rendered prompt (9236 characters)
+[2025-12-04T15:22:08.489340+00:00] Sending prompt to LLM
+[2025-12-04T15:22:15.823928+00:00] LLM returned 1 items
+[2025-12-04T15:22:15.825421+00:00] QA #3: wrote qa_0003.json with status=pass
+[2025-12-04T15:22:15.825606+00:00] QA #4: paragraph -> s109
+[2025-12-04T15:22:15.826791+00:00] QA #4: versions ao_s109_until_2019-12-18.json -> ao_s109_current.json
+[2025-12-04T15:22:15.826960+00:00] Sending classification prompt to LLM
+[2025-12-04T15:22:17.679794+00:00] Classification result: substantive_change=True, reason=Absatz 2 wurde nur redaktionell zusammengezogen; inhaltlich unverändert. Neu eingefügt wurde jedoch § 109 Abs. 4 AO, der die Art der Fristverlängerung (ausschließlich automationsgestützt, Einsatz eine
+[2025-12-04T15:22:17.680524+00:00] QA #4: rendered prompt (5781 characters)
+[2025-12-04T15:22:17.680683+00:00] Sending prompt to LLM
+[2025-12-04T15:22:23.277135+00:00] LLM returned 1 items
+[2025-12-04T15:22:23.278183+00:00] QA #4: wrote qa_0004.json with status=fail
+[2025-12-04T15:22:23.278415+00:00] QA #5: paragraph -> s1
+[2025-12-04T15:22:23.280190+00:00] QA #5: versions ao_s1_until_2013-06-30.json -> ao_s1_until_2018-05-25.json
+[2025-12-04T15:22:23.280388+00:00] Sending classification prompt to LLM
+[2025-12-04T15:22:25.137373+00:00] Classification result: substantive_change=False, reason=Die Änderungen betreffen nur die Ersetzung des Begriffs 'Europäische Gemeinschaften' durch 'Europäische Union' sowie eine redaktionell fehlerhafte Zusammenziehung der Nrn. 1 und 2 in Abs. 2; der sachl
+[2025-12-04T15:22:25.138060+00:00] QA #5: classification says editorial (Die Änderungen betreffen nur die Ersetzung des Begriffs 'Europäische Gemeinschaften' durch 'Europäische Union' sowie eine redaktionell fehlerhafte Zusammenziehung der Nrn. 1 und 2 in Abs. 2; der sachliche Anwendungsbereich, Rechte und Pflichten sowie Zuständigkeiten bleiben unverändert.); skipping paragraph
+[2025-12-04T15:22:25.138423+00:00] QA #5: paragraph -> s116
+[2025-12-04T15:22:25.140563+00:00] QA #5: versions ao_s116_until_2007-12-29.json -> ao_s116_current.json
+[2025-12-04T15:22:25.140751+00:00] Sending classification prompt to LLM
+[2025-12-04T15:22:27.445593+00:00] Classification result: substantive_change=True, reason=Abs. 1 erweitert die Mitteilungspflicht: Mitteilungen können nun wahlweise direkt an die zuständigen Finanzbehörden für das Steuerstrafverfahren erfolgen; zugleich werden neue Pflichten zur Weiterleit
+[2025-12-04T15:22:27.445801+00:00] QA #5: rendered prompt (3721 characters)
+[2025-12-04T15:22:27.445999+00:00] Sending prompt to LLM
+[2025-12-04T15:22:32.073643+00:00] LLM returned 1 items
+[2025-12-04T15:22:32.074277+00:00] QA #5: wrote qa_0005.json with status=fail
+[2025-12-04T15:22:32.074352+00:00] QA #6: paragraph -> s117c
+[2025-12-04T15:22:32.077527+00:00] QA #6: versions ao_s117c_until_2024-12-06.json -> ao_s117c_current.json
+[2025-12-04T15:22:32.077681+00:00] Sending classification prompt to LLM
+[2025-12-04T15:22:34.251852+00:00] Classification result: substantive_change=True, reason=Neu eingefügt wurde in Abs. 1 Nr. 5 die ausdrückliche Ermächtigung, vorsätzliche und leichtfertige Verstöße der erfassten Dritten als Ordnungswidrigkeiten zu ahnden, ein Bußgeld bis zu 50.000 Euro fes
+[2025-12-04T15:22:34.253369+00:00] QA #6: rendered prompt (9051 characters)
+[2025-12-04T15:22:34.253633+00:00] Sending prompt to LLM
+[2025-12-04T15:22:42.600966+00:00] LLM returned 1 items
+[2025-12-04T15:22:42.601862+00:00] QA #6: wrote qa_0006.json with status=fail
+[2025-12-04T15:22:42.601944+00:00] QA #7: paragraph -> s103
+[2025-12-04T15:22:42.602618+00:00] QA #7: versions ao_s103_until_2018-05-25.json -> ao_s103_current.json
+[2025-12-04T15:22:42.602751+00:00] Sending classification prompt to LLM
+[2025-12-04T15:22:43.932877+00:00] Classification result: substantive_change=False, reason=Die Formulierung zur Gefahr der Verfolgung wegen Straftat/Ordnungswidrigkeit wurde nur sprachlich umgestellt; Inhalt (Voraussetzungen und Umfang des Auskunftsverweigerungsrechts) bleibt unverändert.
+[2025-12-04T15:22:43.933441+00:00] QA #7: classification says editorial (Die Formulierung zur Gefahr der Verfolgung wegen Straftat/Ordnungswidrigkeit wurde nur sprachlich umgestellt; Inhalt (Voraussetzungen und Umfang des Auskunftsverweigerungsrechts) bleibt unverändert.); skipping paragraph
+[2025-12-04T15:22:43.933812+00:00] QA #7: paragraph -> s117
+[2025-12-04T15:22:43.935692+00:00] QA #7: versions ao_s117_until_2024-01-01.json -> ao_s117_until_2024-03-28.json
+[2025-12-04T15:22:43.935913+00:00] Sending classification prompt to LLM
+[2025-12-04T15:22:46.389010+00:00] Classification result: substantive_change=True, reason=Neu eingefügter Absatz 6 schränkt die Anwendung von § 2a Abs. 5 Nr. 2 AO ein, soweit diese der Inanspruchnahme oder Leistung zwischenstaatlicher Amtshilfe entgegensteht. Dadurch ändern sich die rechtl
+[2025-12-04T15:22:46.389840+00:00] QA #7: rendered prompt (9960 characters)
+[2025-12-04T15:22:46.390085+00:00] Sending prompt to LLM
+[2025-12-04T15:22:51.099464+00:00] LLM returned 1 items
+[2025-12-04T15:22:51.101030+00:00] QA #7: wrote qa_0007.json with status=fail
+[2025-12-04T15:22:51.101203+00:00] QA #8: paragraph -> s108
+[2025-12-04T15:22:51.102208+00:00] QA #8: versions ao_s108_until_2019-11-26.json -> ao_s108_current.json
+[2025-12-04T15:22:51.102413+00:00] Sending classification prompt to LLM
+[2025-12-04T15:22:52.431678+00:00] Classification result: substantive_change=False, reason=Lediglich sprachliche Anpassung von "dem Betroffenen" zu "der betroffenen Person" in Abs. 2 ohne Änderung von Rechten, Pflichten oder Voraussetzungen; alle übrigen Regelungsinhalte bleiben unverändert
+[2025-12-04T15:22:52.432204+00:00] QA #8: classification says editorial (Lediglich sprachliche Anpassung von "dem Betroffenen" zu "der betroffenen Person" in Abs. 2 ohne Änderung von Rechten, Pflichten oder Voraussetzungen; alle übrigen Regelungsinhalte bleiben unverändert.); skipping paragraph
+[2025-12-04T15:22:52.432710+00:00] QA #8: paragraph -> s107
+[2025-12-04T15:22:52.433999+00:00] QA #8: versions ao_s107_until_2013-06-30.json -> ao_s107_current.json
+[2025-12-04T15:22:52.434186+00:00] Sending classification prompt to LLM
+[2025-12-04T15:22:54.070069+00:00] Classification result: substantive_change=True, reason=Der persönliche Anwendungsbereich wird auf Vorlagepflichtige erweitert und der Ausnahmetatbestand auf Personen mit Vorlagepflicht ausgedehnt; damit werden Rechte und Pflichten (Anspruch auf Entschädig
+[2025-12-04T15:22:54.070732+00:00] QA #8: rendered prompt (3124 characters)
+[2025-12-04T15:22:54.071013+00:00] Sending prompt to LLM
+[2025-12-04T15:22:58.256177+00:00] LLM returned 1 items
+[2025-12-04T15:22:58.257698+00:00] QA #8: wrote qa_0008.json with status=fail
+[2025-12-04T15:22:58.257852+00:00] QA #9: paragraph -> s117d
+[2025-12-04T15:22:58.258761+00:00] QA #9: versions ao_s117d_until_2019-12-18.json -> ao_s117d_current.json
+[2025-12-04T15:22:58.258952+00:00] Sending classification prompt to LLM
+[2025-12-04T15:23:00.010044+00:00] Classification result: substantive_change=True, reason=Mit Fassung B wird eine neue Regelung (§ 117d AO) eingeführt, die die Verarbeitung und öffentliche Zugänglichmachung statistisch pseudonymisierter oder anonymisierter Daten ausdrücklich erlaubt; dies 
+[2025-12-04T15:23:00.011743+00:00] QA #9: rendered prompt (2496 characters)
+[2025-12-04T15:23:00.012318+00:00] Sending prompt to LLM
+[2025-12-04T15:23:05.252765+00:00] LLM returned 1 items
+[2025-12-04T15:23:05.254367+00:00] QA #9: wrote qa_0009.json with status=pass
+[2025-12-04T15:23:05.254527+00:00] Ran out of paragraphs after filtering editorial changes.
