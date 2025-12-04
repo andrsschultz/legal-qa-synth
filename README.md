@@ -11,7 +11,7 @@ Generates deutschsprachige AO Frage-Antwort-Paare aus konsolidierten Fassungen d
 # ensure .env has OPENAI_API_KEY or export it
 python generator.py --count 3 --model gpt-5
 ```
-- Paragraph selection is randomized per Q/A (only paragraphs with ≥2 versions are used), so `--count 3` targets 3 different paragraphs.
+- Paragraph and version selection are randomized per Q/A (paragraphs may repeat). Each Q/A is only generated if an LLM-based check finds a substantive change between consecutive versions.
 - Adjust `--temperature` and `--count` as needed.
 
 ### Outputs
@@ -22,4 +22,6 @@ python generator.py --count 3 --model gpt-5
 
 ### Notes
 - No dry-run placeholder: an API-capable model/key is required. If the request fails, the run aborts.
+- Classification gate: an LLM first checks if the two versions differ in substance; editorial changes are skipped and logged in `metadata.json` under `skipped`.
+- Current-version filter: Q/As whose `relevant_fact_date` falls into the open-ended current version are skipped and logged.
 - To reproduce a run, reuse `--seed` from `metadata.json`.
