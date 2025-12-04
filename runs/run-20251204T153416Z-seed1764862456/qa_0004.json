@@ -1,0 +1,56 @@
+{
+  "question_answer_pairs": [
+    {
+      "question_text": "Das Bundeszentralamt für Steuern (BZSt) übermittelt am 10.08.2018 auf Grundlage einer nach § 117c AO Abs. 1 erlassenen Rechtsverordnung Daten an die zuständige Finanzbehörde eines anderen Vertragsstaates. Muss das BZSt die betroffenen Beteiligten vor dieser Übermittlung nach der im August 2018 geltenden Rechtslage anhören?",
+      "answer_text": "Am 10.08.2018 musste das Bundeszentralamt für Steuern die betroffenen Beteiligten vor der Übermittlung der Daten an die zuständige Finanzbehörde des anderen Vertragsstaates nicht anhören, da nach der ab dem 25.06.2017 geltenden Fassung des § 117c AO Abs. 2 ausdrücklich bestimmt ist, dass eine Anhörung der Beteiligten nicht stattfindet.",
+      "legal_basis": [
+        {
+          "law": "AO",
+          "citation": "§ 117c AO Abs. 2",
+          "version_valid_from": "2017-06-25",
+          "version_valid_to": "2024-12-06"
+        }
+      ],
+      "relevant_fact_date": "2018-08-10",
+      "source_versions": [
+        {
+          "file": "§117c_AO_Fassung_2017-01-01_bis_2017-06-25",
+          "valid_from": "2017-01-01",
+          "valid_to": "2017-06-25"
+        },
+        {
+          "file": "§117c_AO_Fassung_2017-06-25_bis_2024-12-06",
+          "valid_from": "2017-06-25",
+          "valid_to": "2024-12-06"
+        }
+      ]
+    }
+  ],
+  "source_versions": [
+    {
+      "file": "data/AO/s117c/ao_s117c_until_2017-06-25.json",
+      "valid_from": "2017-01-01",
+      "valid_to": "2017-06-25"
+    },
+    {
+      "file": "data/AO/s117c/ao_s117c_until_2024-12-06.json",
+      "valid_from": "2017-06-25",
+      "valid_to": "2024-12-06"
+    }
+  ],
+  "legal_basis": [
+    {
+      "law": "AO",
+      "citation": "§ 117c AO",
+      "version_valid_from": "2017-06-25",
+      "version_valid_to": "2024-12-06"
+    }
+  ],
+  "relevant_fact_date": "2021-03-16",
+  "validation": {
+    "status": "fail",
+    "issues": [
+      "Duplicate question_text in run"
+    ]
+  }
+}

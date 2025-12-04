@@ -1,0 +1,56 @@
+{
+  "question_answer_pairs": [
+    {
+      "question_text": "Eine Landesfinanzbehörde erhält am 15.03.2014 ein Ersuchen einer anderen EU-Mitgliedstaatenbehörde um zwischenstaatliche Amtshilfe in einer Einkommensteuersache. Die Behörde will dem inländischen Beteiligten vor Übermittlung der Auskünfte keine Anhörung gewähren. Kann sie sich für die Ausnahme von der Anhörungspflicht darauf berufen, dass ein Informationsaustausch auf Grund des EU-Amtshilfegesetzes stattfindet?",
+      "answer_text": "Ja, am 15.03.2014 kann sich die Landesfinanzbehörde auf die in § 117 AO Abs. 4 ausdrücklich geregelte Ausnahme berufen, dass bei einem Informationsaustausch auf Grund des EU-Amtshilfegesetzes eine Anhörung des inländischen Beteiligten nicht stattfinden muss.",
+      "legal_basis": [
+        {
+          "law": "AO",
+          "citation": "§ 117 AO Abs. 4",
+          "version_valid_from": "2013-01-01",
+          "version_valid_to": "2024-01-01"
+        }
+      ],
+      "relevant_fact_date": "2014-03-15",
+      "source_versions": [
+        {
+          "file": "AO_117_vorgaenger",
+          "valid_from": null,
+          "valid_to": "2013-01-01"
+        },
+        {
+          "file": "AO_117_nachfolger",
+          "valid_from": "2013-01-01",
+          "valid_to": "2024-01-01"
+        }
+      ]
+    }
+  ],
+  "source_versions": [
+    {
+      "file": "data/AO/s117/ao_s117_until_2013-01-01.json",
+      "valid_from": null,
+      "valid_to": "2013-01-01"
+    },
+    {
+      "file": "data/AO/s117/ao_s117_until_2024-01-01.json",
+      "valid_from": "2013-01-01",
+      "valid_to": "2024-01-01"
+    }
+  ],
+  "legal_basis": [
+    {
+      "law": "AO",
+      "citation": "§ 117 AO",
+      "version_valid_from": "2013-01-01",
+      "version_valid_to": "2024-01-01"
+    }
+  ],
+  "relevant_fact_date": "2018-07-02",
+  "validation": {
+    "status": "fail",
+    "issues": [
+      "Duplicate question_text in run"
+    ]
+  }
+}

@@ -506,6 +506,22 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         attach_source_versions(qa, version_pair)
         fill_legal_basis_defaults(qa, version_pair)
         ensure_fact_date_in_range(qa, version_pair[1])
+
+        fact_date = parse_date(qa.get("relevant_fact_date"))
+        if version_pair[1].valid_to is None and fact_date and fact_date >= version_pair[1].start_date:
+            logger.write(
+                f"QA #{qa_index+1}: relevant_fact_date {fact_date} liegt im offenen Geltungszeitraum der aktuellen Fassung; skipping"
+            )
+            skipped_meta.append(
+                {
+                    "paragraph_id": paragraph_id,
+                    "versions_used": [version_pair[0].to_metadata(), version_pair[1].to_metadata()],
+                    "classification": {"substantive_change": True, "reason": reason},
+                    "skip_reason": "current_open_version_fact_date",
+                }
+            )
+            continue
+
         qa = validate_qa(qa, paragraph_id, version_pair[1].provision, version_pair, seen_questions)
         seen_questions.add((qa.get("question_text") or "").strip().lower())
         qa_filename = run_dir / f"qa_{qa_index+1:04d}.json"

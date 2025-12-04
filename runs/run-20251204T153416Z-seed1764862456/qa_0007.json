@@ -1,0 +1,62 @@
+{
+  "question_answer_pairs": [
+    {
+      "question_text": "Ein kommunaler Träger der öffentlichen Verwaltung erfährt am 20.10.2006 im Rahmen seiner dienstlichen Tätigkeit von Tatsachen, die auf eine Steuerstraftat schließen lassen. An welche Stelle muss dieser Träger die erlangten Informationen nach der am 20.10.2006 geltenden Rechtslage weiterleiten?",
+      "answer_text": "Am 20.10.2006 musste der kommunale Träger der öffentlichen Verwaltung die dienstlich erlangten Tatsachen, die auf eine Steuerstraftat schließen lassen, dem Bundeszentralamt für Steuern mitteilen. Dieses hatte die Tatsachen sodann den für das Strafverfahren zuständigen Behörden mitzuteilen.",
+      "legal_basis": [
+        {
+          "law": "AO",
+          "citation": "§ 116 AO Abs. 1",
+          "version_valid_from": "2006-09-12",
+          "version_valid_to": "2007-12-29"
+        },
+        {
+          "law": "AO",
+          "citation": "§ 116 AO Abs. 2",
+          "version_valid_from": "2006-09-12",
+          "version_valid_to": "2007-12-29"
+        }
+      ],
+      "relevant_fact_date": "2006-10-20",
+      "source_versions": [
+        {
+          "file": "§116_AO_vorgaenger",
+          "valid_from": null,
+          "valid_to": "2006-09-12"
+        },
+        {
+          "file": "§116_AO_nachfolger",
+          "valid_from": "2006-09-12",
+          "valid_to": "2007-12-29"
+        }
+      ]
+    }
+  ],
+  "source_versions": [
+    {
+      "file": "data/AO/s116/ao_s116_until_2006-09-12.json",
+      "valid_from": null,
+      "valid_to": "2006-09-12"
+    },
+    {
+      "file": "data/AO/s116/ao_s116_until_2007-12-29.json",
+      "valid_from": "2006-09-12",
+      "valid_to": "2007-12-29"
+    }
+  ],
+  "legal_basis": [
+    {
+      "law": "AO",
+      "citation": "§ 116 AO",
+      "version_valid_from": "2006-09-12",
+      "version_valid_to": "2007-12-29"
+    }
+  ],
+  "relevant_fact_date": "2007-05-06",
+  "validation": {
+    "status": "fail",
+    "issues": [
+      "Duplicate question_text in run"
+    ]
+  }
+}

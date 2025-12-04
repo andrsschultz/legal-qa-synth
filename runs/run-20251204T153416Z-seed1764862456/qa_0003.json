@@ -1,0 +1,60 @@
+{
+  "question_answer_pairs": [
+    {
+      "question_text": "Die Gemeinde G erhebt im Jahr 2019 Gewerbesteuer. Am 15.10.2019 erlässt sie gegenüber Unternehmer U einen Gewerbesteuermessbescheid und verarbeitet dabei automatisiert personenbezogene Daten des U. U rügt, dass bei der Erhebung und Verarbeitung seiner Daten die in der Abgabenordnung geregelten Betroffenenrechte und die datenschutzrechtliche Aufsicht nicht beachtet worden seien. Finden die Vorschriften der Abgabenordnung über Betroffenenrechte sowie Datenschutzaufsicht und gerichtlichen Rechtsschutz in datenschutzrechtlichen Angelegenheiten im Hinblick auf die am 15.10.2019 verwaltete Realsteuer Anwendung?",
+      "answer_text": "Ja. Für die am 15.10.2019 verwaltete Gewerbesteuer als Realsteuer gelten die Vorschriften des Ersten Teils der Abgabenordnung einschließlich des Sechsten und Siebten Abschnitts (Betroffenenrechte; Datenschutzaufsicht, gerichtlicher Rechtsschutz in datenschutzrechtlichen Angelegenheiten) entsprechend, da zu diesem Zeitpunkt die Fassung des § 1 AO Abs. 2 Nr. 1 in der vom 25.05.2018 bis 29.12.2020 geltenden Version maßgeblich ist.",
+      "legal_basis": [
+        {
+          "law": "AO",
+          "citation": "§ 1 AO Abs. 2",
+          "version_valid_from": "2018-05-25",
+          "version_valid_to": "2020-12-29"
+        },
+        {
+          "law": "AO",
+          "citation": "§ 1 AO Abs. 2 Nr. 1",
+          "version_valid_from": "2018-05-25",
+          "version_valid_to": "2020-12-29"
+        }
+      ],
+      "relevant_fact_date": "2019-10-15",
+      "source_versions": [
+        {
+          "file": "AO_1_2013-06-30_2018-05-25.json",
+          "valid_from": "2013-06-30",
+          "valid_to": "2018-05-25"
+        },
+        {
+          "file": "AO_1_2018-05-25_2020-12-29.json",
+          "valid_from": "2018-05-25",
+          "valid_to": "2020-12-29"
+        }
+      ]
+    }
+  ],
+  "source_versions": [
+    {
+      "file": "data/AO/s1/ao_s1_until_2018-05-25.json",
+      "valid_from": "2013-06-30",
+      "valid_to": "2018-05-25"
+    },
+    {
+      "file": "data/AO/s1/ao_s1_until_2020-12-29.json",
+      "valid_from": "2018-05-25",
+      "valid_to": "2020-12-29"
+    }
+  ],
+  "legal_basis": [
+    {
+      "law": "AO",
+      "citation": "§ 1 AO",
+      "version_valid_from": "2018-05-25",
+      "version_valid_to": "2020-12-29"
+    }
+  ],
+  "relevant_fact_date": "2019-09-11",
+  "validation": {
+    "status": "pass",
+    "issues": []
+  }
+}

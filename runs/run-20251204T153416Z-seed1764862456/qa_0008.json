@@ -1,0 +1,35 @@
+{
+  "question_text": "Ein Steuerberater S wird im Rahmen einer steuerlichen Außenprüfung am 10.09.2010 von der Finanzbehörde zur Auskunft über einem Mandanten anvertraute Tatsachen befragt. Er beruft sich auf sein Auskunftsverweigerungsrecht und verweist darauf, dass seine gesetzlichen Mitteilungspflichten nach der Zinsinformationsverordnung unberührt bleiben. Ist die Zinsinformationsverordnung für die Reichweite seines Auskunftsverweigerungsrechts zu diesem Zeitpunkt in § 102 AO ausdrücklich erwähnt?",
+  "answer_text": "Am 10.09.2010 gilt die Fassung des § 102 AO, die seit dem 18.08.2007 in Kraft ist. In dieser Fassung werden die Mitteilungspflichten nach der Zinsinformationsverordnung in § 102 AO Abs. 4 ausdrücklich erwähnt. Damit ist die Zinsinformationsverordnung für die Reichweite des Auskunftsverweigerungsrechts der in § 102 AO Abs. 1 Nr. 3 Buchst. b genannten Personen gesetzlich ausdrücklich berücksichtigt.",
+  "legal_basis": [
+    {
+      "law": "AO",
+      "citation": "§ 102 AO Abs. 1 Nr. 3 Buchst. b",
+      "version_valid_from": "2007-08-18",
+      "version_valid_to": "2020-01-01"
+    },
+    {
+      "law": "AO",
+      "citation": "§ 102 AO Abs. 4",
+      "version_valid_from": "2007-08-18",
+      "version_valid_to": "2020-01-01"
+    }
+  ],
+  "relevant_fact_date": "2010-09-10",
+  "source_versions": [
+    {
+      "file": "data/AO/s102/ao_s102_until_2007-08-18.json",
+      "valid_from": null,
+      "valid_to": "2007-08-18"
+    },
+    {
+      "file": "data/AO/s102/ao_s102_until_2020-01-01.json",
+      "valid_from": "2007-08-18",
+      "valid_to": "2020-01-01"
+    }
+  ],
+  "validation": {
+    "status": "pass",
+    "issues": []
+  }
+}
