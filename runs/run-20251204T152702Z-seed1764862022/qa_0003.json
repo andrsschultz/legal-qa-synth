@@ -1,0 +1,56 @@
+{
+  "question_answer_pairs": [
+    {
+      "question_text": "Eine Landesfinanzbehörde erhält am 15.03.2014 ein Ersuchen einer ausländischen Steuerbehörde um Auskunftsübermittlung. Die ersuchte Auskunft betrifft Einkommensteuern, die von der Landesfinanzbehörde verwaltet werden. Es ist ein Informationsaustausch auf Grundlage des EU-Amtshilfegesetzes vorgesehen. Muss die inländische steuerpflichtige Person vor Übermittlung der Auskünfte nach § 117 AO angehört werden?",
+      "answer_text": "Am 15.03.2014 galt die Fassung des § 117 AO, nach der bei einem Informationsaustausch auf Grund des EU-Amtshilfegesetzes eine Anhörung des inländischen Beteiligten ausnahmsweise nicht stattfinden muss. Zwar ist bei Rechts- und Amtshilfe, die Steuern betrifft, die von den Landesfinanzbehörden verwaltet werden, grundsätzlich stets eine Anhörung des inländischen Beteiligten durchzuführen; dies gilt jedoch nicht, wenn ein Informationsaustausch auf Grund des EU-Amtshilfegesetzes erfolgt. Daher besteht im Fall vom 15.03.2014 keine Anhörungspflicht.",
+      "legal_basis": [
+        {
+          "law": "AO",
+          "citation": "§ 117 AO Abs. 4",
+          "version_valid_from": "2013-01-01",
+          "version_valid_to": "2024-01-01"
+        }
+      ],
+      "relevant_fact_date": "2014-03-15",
+      "source_versions": [
+        {
+          "file": "AO_117_vorgaenger.json",
+          "valid_from": null,
+          "valid_to": "2013-01-01"
+        },
+        {
+          "file": "AO_117_nachfolger.json",
+          "valid_from": "2013-01-01",
+          "valid_to": "2024-01-01"
+        }
+      ]
+    }
+  ],
+  "source_versions": [
+    {
+      "file": "data/AO/s117/ao_s117_until_2013-01-01.json",
+      "valid_from": null,
+      "valid_to": "2013-01-01"
+    },
+    {
+      "file": "data/AO/s117/ao_s117_until_2024-01-01.json",
+      "valid_from": "2013-01-01",
+      "valid_to": "2024-01-01"
+    }
+  ],
+  "legal_basis": [
+    {
+      "law": "AO",
+      "citation": "§ 117 AO",
+      "version_valid_from": "2013-01-01",
+      "version_valid_to": "2024-01-01"
+    }
+  ],
+  "relevant_fact_date": "2018-07-02",
+  "validation": {
+    "status": "fail",
+    "issues": [
+      "Duplicate question_text in run"
+    ]
+  }
+}

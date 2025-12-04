@@ -1,0 +1,326 @@
+{
+  "run_id": "run-20251204T152702Z-seed1764862022",
+  "created_at": "2025-12-04T15:28:33.117617+00:00",
+  "random_seed": 1764862022,
+  "requested_count": 10,
+  "generated_count": 10,
+  "qa_runs": [
+    {
+      "qa_file": "qa_0001.json",
+      "paragraph_id": "s117d",
+      "versions_used": [
+        {
+          "file": "data/AO/s117d/ao_s117d_until_2019-12-18.json",
+          "provision": "§ 117d AO",
+          "valid_from": null,
+          "valid_to": "2019-12-18",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al81222-0.htm"
+        },
+        {
+          "file": "data/AO/s117d/ao_s117d_current.json",
+          "provision": "§ 117d AO",
+          "valid_from": "2019-12-18",
+          "valid_to": null,
+          "canonical_url": "https://www.buzer.de/117d_AO.htm"
+        }
+      ],
+      "classification": {
+        "substantive_change": true,
+        "reason": "Es wird erstmals eine Regelung eingeführt, die die statistische pseudonymisierte oder anonymisierte Aufbereitung von Informationen aus der zwischenstaatlichen Amts- und Rechtshilfe sowie deren öffentliche Zugänglichmachung erlaubt; dies begründet neue Befugnisse und damit eine materielle Änderung."
+      }
+    },
+    {
+      "qa_file": "qa_0002.json",
+      "paragraph_id": "s107",
+      "versions_used": [
+        {
+          "file": "data/AO/s107/ao_s107_until_2013-06-30.json",
+          "provision": "§ 107 AO",
+          "valid_from": null,
+          "valid_to": "2013-06-30",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al38996-0.htm"
+        },
+        {
+          "file": "data/AO/s107/ao_s107_current.json",
+          "provision": "§ 107 AO",
+          "valid_from": "2013-06-30",
+          "valid_to": null,
+          "canonical_url": "https://www.buzer.de/107_AO.htm"
+        }
+      ],
+      "classification": {
+        "substantive_change": true,
+        "reason": "Der persönliche Anwendungsbereich wird auf Vorlagepflichtige erweitert und der Ausnahmetatbestand auf Personen mit Vorlagepflicht ausgedehnt; damit werden Rechte und Pflichten (Anspruch auf Entschädigung/Vergütung bzw. Ausschluss davon) materiell geändert."
+      }
+    },
+    {
+      "qa_file": "qa_0003.json",
+      "paragraph_id": "s117",
+      "versions_used": [
+        {
+          "file": "data/AO/s117/ao_s117_until_2013-01-01.json",
+          "provision": "§ 117 AO",
+          "valid_from": null,
+          "valid_to": "2013-01-01",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al38937-0.htm"
+        },
+        {
+          "file": "data/AO/s117/ao_s117_until_2024-01-01.json",
+          "provision": "§ 117 AO",
+          "valid_from": "2013-01-01",
+          "valid_to": "2024-01-01",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al194493-0.htm"
+        }
+      ],
+      "classification": {
+        "substantive_change": true,
+        "reason": "In Abs. 2 werden die Begriffe \"Europäische Gemeinschaften\" und \"EG-Amtshilfe-Gesetz\" durch \"Europäische Union\" und \"EU-Amtshilfegesetz\" ersetzt; dies ist im Wesentlichen eine begriffliche/terminologische Anpassung. Materiell relevant ist jedoch die Ergänzung in Abs. 4 S. 3: Zur bisherigen Ausnahme von der Anhörung bei Umsatzsteuer tritt als weitere Ausnahme hinzu, dass auch bei einem Informationsaustausch auf Grund des EU-Amtshilfegesetzes keine Anhörung stattfinden muss. Dadurch wird der bisherige Anspruch auf Anhörung in einem zusätzlichen Fall ausgeschlossen; dies stellt eine inhaltliche Änderung der Beteiligtenrechte dar."
+      }
+    },
+    {
+      "qa_file": "qa_0004.json",
+      "paragraph_id": "s116",
+      "versions_used": [
+        {
+          "file": "data/AO/s116/ao_s116_until_2006-09-12.json",
+          "provision": "§ 116 AO",
+          "valid_from": null,
+          "valid_to": "2006-09-12",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al1852-0.htm"
+        },
+        {
+          "file": "data/AO/s116/ao_s116_until_2007-12-29.json",
+          "provision": "§ 116 AO",
+          "valid_from": "2006-09-12",
+          "valid_to": "2007-12-29",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al10200-0.htm"
+        }
+      ],
+      "classification": {
+        "substantive_change": true,
+        "reason": "Abs. 1 ändert die mitteilungspflichtige Stelle (nun nur noch Gerichte/Behörden, die nicht Finanzbehörden sind), den Adressaten der Mitteilung (statt zuständiger Finanzbehörde nun Bundeszentralamt für Steuern) sowie den Inhalt und Ablauf der Weiterleitung (BZS leitet an zuständige Strafverfolgungsbehörden weiter). Damit werden Zuständigkeiten und der Verfahrensweg materiell neu geregelt."
+      }
+    },
+    {
+      "qa_file": "qa_0005.json",
+      "paragraph_id": "s117a",
+      "versions_used": [
+        {
+          "file": "data/AO/s117a/ao_s117a_until_2012-07-26.json",
+          "provision": "§ 117a AO",
+          "valid_from": null,
+          "valid_to": "2012-07-26",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al34726-0.htm"
+        },
+        {
+          "file": "data/AO/s117a/ao_s117a_current.json",
+          "provision": "§ 117a AO",
+          "valid_from": "2012-07-26",
+          "valid_to": null,
+          "canonical_url": "https://www.buzer.de/117a_AO.htm"
+        }
+      ],
+      "classification": {
+        "substantive_change": true,
+        "reason": "In Fassung A existiert keine Regelung; Fassung B führt § 117a AO neu ein und schafft umfassende Befugnisse und Grenzen zur Übermittlung personenbezogener Daten an ausländische Stellen. Dies begründet neue Rechte und Pflichten der Finanzbehörden und Betroffener und ist daher eine materielle Neuregelung."
+      }
+    },
+    {
+      "qa_file": "qa_0006.json",
+      "paragraph_id": "s102",
+      "versions_used": [
+        {
+          "file": "data/AO/s102/ao_s102_until_2020-09-01.json",
+          "provision": "§ 102 AO",
+          "valid_from": "2020-01-01",
+          "valid_to": "2020-09-01",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al108947-0.htm"
+        },
+        {
+          "file": "data/AO/s102/ao_s102_current.json",
+          "provision": "§ 102 AO",
+          "valid_from": "2020-09-01",
+          "valid_to": null,
+          "canonical_url": "https://www.buzer.de/102_AO.htm"
+        }
+      ],
+      "classification": {
+        "substantive_change": true,
+        "reason": "In Abs. 1 Nr. 3 Buchst. c wird der geschützte Personenkreis um 'Psychotherapeuten' erweitert; zudem wird der Bezugssatz 'über das, was ihnen in dieser Eigenschaft anvertraut worden oder bekannt geworden ist' aus Buchst. c herausgelöst und als eigene Nr. 3 formuliert, die sich nun einheitlich auf alle in Nr. 3 Buchst. a–c genannten Berufsgruppen bezieht. Beides führt zu einer materiellen Erweiterung des Auskunftsverweigerungsrechts und ist keine bloß redaktionelle Änderung."
+      }
+    },
+    {
+      "qa_file": "qa_0007.json",
+      "paragraph_id": "s117b",
+      "versions_used": [
+        {
+          "file": "data/AO/s117b/ao_s117b_until_2012-07-26.json",
+          "provision": "§ 117b AO",
+          "valid_from": null,
+          "valid_to": "2012-07-26",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al34727-0.htm"
+        },
+        {
+          "file": "data/AO/s117b/ao_s117b_current.json",
+          "provision": "§ 117b AO",
+          "valid_from": "2012-07-26",
+          "valid_to": null,
+          "canonical_url": "https://www.buzer.de/117b_AO.htm"
+        }
+      ],
+      "classification": {
+        "substantive_change": true,
+        "reason": "In Fassung A existiert keine Regelung; Fassung B führt neue Vorschriften (§ 117b AO) zur Verwendung und Zweckbindung übermittelter Daten, zu Zustimmungserfordernissen, Auflagenbeachtung und Auskunftspflichten ein und begründet damit neue Rechte und Pflichten."
+      }
+    },
+    {
+      "qa_file": "qa_0008.json",
+      "paragraph_id": "s116",
+      "versions_used": [
+        {
+          "file": "data/AO/s116/ao_s116_until_2006-09-12.json",
+          "provision": "§ 116 AO",
+          "valid_from": null,
+          "valid_to": "2006-09-12",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al1852-0.htm"
+        },
+        {
+          "file": "data/AO/s116/ao_s116_until_2007-12-29.json",
+          "provision": "§ 116 AO",
+          "valid_from": "2006-09-12",
+          "valid_to": "2007-12-29",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al10200-0.htm"
+        }
+      ],
+      "classification": {
+        "substantive_change": true,
+        "reason": "Abs. 1 ändert die mitteilungspflichtige Stelle (nun nur noch Gerichte/Behörden, die nicht Finanzbehörden sind), den Adressaten der Mitteilung (statt zuständiger Finanzbehörde nun Bundeszentralamt für Steuern) sowie den Inhalt der Mitteilungspflicht (Tatsachen, die auf eine Steuerstraftat schließen lassen statt Verdacht begründen) und führt eine neue Pflicht des Bundeszentralamts zur Weiterleitung an die für das Strafverfahren zuständigen Behörden ein; dies sind materielle Änderungen von Zuständigkeiten und Pflichten."
+      }
+    },
+    {
+      "qa_file": "qa_0009.json",
+      "paragraph_id": "s117c",
+      "versions_used": [
+        {
+          "file": "data/AO/s117c/ao_s117c_until_2013-12-24.json",
+          "provision": "§ 117c AO",
+          "valid_from": null,
+          "valid_to": "2013-12-24",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al42288-0.htm"
+        },
+        {
+          "file": "data/AO/s117c/ao_s117c_until_2016-12-24.json",
+          "provision": "§ 117c AO",
+          "valid_from": "2013-12-24",
+          "valid_to": "2016-12-24",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al57765-0.htm"
+        }
+      ],
+      "classification": {
+        "substantive_change": true,
+        "reason": "Es wird ein neuer § 117c AO eingeführt, der dem BMF Verordnungsermächtigungen, dem BZSt Prüf- und Übermittlungsbefugnisse sowie Regelungen zur Anhörung, zum Ausschluss des § 30a AO und zur Zweckbindung der Daten einräumt; damit entstehen neue Rechte und Pflichten und ein neuer Regelungsgehalt."
+      }
+    },
+    {
+      "qa_file": "qa_0010.json",
+      "paragraph_id": "s102",
+      "versions_used": [
+        {
+          "file": "data/AO/s102/ao_s102_until_2020-09-01.json",
+          "provision": "§ 102 AO",
+          "valid_from": "2020-01-01",
+          "valid_to": "2020-09-01",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al108947-0.htm"
+        },
+        {
+          "file": "data/AO/s102/ao_s102_current.json",
+          "provision": "§ 102 AO",
+          "valid_from": "2020-09-01",
+          "valid_to": null,
+          "canonical_url": "https://www.buzer.de/102_AO.htm"
+        }
+      ],
+      "classification": {
+        "substantive_change": true,
+        "reason": "In Abs. 1 Nr. 3 Buchst. c wird der geschützte Personenkreis um 'Psychotherapeuten' erweitert; zudem wird der Bezugssatz 'über das, was ihnen in dieser Eigenschaft anvertraut worden oder bekannt geworden ist' aus Buchst. c herausgelöst und als eigene Nr. 3 formuliert, die sich nun einheitlich auf alle in Nr. 3 Buchst. a–c genannten Berufsgruppen bezieht. Beides führt zu einer materiellen Erweiterung des Auskunftsverweigerungsrechts und ist keine bloß redaktionelle Änderung."
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "paragraph_id": "s117",
+      "versions_used": [
+        {
+          "file": "data/AO/s117/ao_s117_until_2024-03-28.json",
+          "provision": "§ 117 AO",
+          "valid_from": "2024-01-01",
+          "valid_to": "2024-03-28",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al194522-0.htm"
+        },
+        {
+          "file": "data/AO/s117/ao_s117_current.json",
+          "provision": "§ 117 AO",
+          "valid_from": "2024-03-28",
+          "valid_to": null,
+          "canonical_url": "https://www.buzer.de/117_AO.htm"
+        }
+      ],
+      "classification": {
+        "substantive_change": false,
+        "reason": "Die Textfassungen sind inhaltlich identisch; es wurden lediglich redaktionelle Klarstellungen vorgenommen (Einführung von Satzbezeichnungen wie 'Abs. 3 Satz 1/2' und Aufspaltung bisher zusammengefasster Sätze in eigene Einheiten), ohne Änderung von Rechten, Pflichten, Voraussetzungen oder Zuständigkeiten."
+      }
+    },
+    {
+      "paragraph_id": "s1",
+      "versions_used": [
+        {
+          "file": "data/AO/s1/ao_s1_until_2013-06-30.json",
+          "provision": "§ 1 AO",
+          "valid_from": null,
+          "valid_to": "2013-06-30",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al39012-0.htm"
+        },
+        {
+          "file": "data/AO/s1/ao_s1_until_2018-05-25.json",
+          "provision": "§ 1 AO",
+          "valid_from": "2013-06-30",
+          "valid_to": "2018-05-25",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al66833-0.htm"
+        }
+      ],
+      "classification": {
+        "substantive_change": false,
+        "reason": "Die Ersetzung des Begriffs 'Recht der Europäischen Gemeinschaften' durch 'Recht der Europäischen Union' in Abs. 1 und 3 ist eine terminologische Anpassung an die unionsrechtliche Begrifflichkeit ohne Änderung des sachlichen Anwendungsbereichs. Die inhaltliche Reichweite der Verweisung auf das höherrangige Unionsrecht bleibt unverändert; weitere Änderungen betreffen nur die Darstellung/Formatierung (insb. Versehen bei Nr. 1/2) ohne erkennbar gewollte materielle Rechtsänderung."
+      }
+    },
+    {
+      "paragraph_id": "s108",
+      "versions_used": [
+        {
+          "file": "data/AO/s108/ao_s108_until_2019-11-26.json",
+          "provision": "§ 108 AO",
+          "valid_from": null,
+          "valid_to": "2019-11-26",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al79411-0.htm"
+        },
+        {
+          "file": "data/AO/s108/ao_s108_current.json",
+          "provision": "§ 108 AO",
+          "valid_from": "2019-11-26",
+          "valid_to": null,
+          "canonical_url": "https://www.buzer.de/108_AO.htm"
+        }
+      ],
+      "classification": {
+        "substantive_change": false,
+        "reason": "Einzige Änderung ist die sprachliche Anpassung von 'dem Betroffenen' zu 'der betroffenen Person' in Abs. 2; dies ändert weder den persönlichen Anwendungsbereich noch Rechte oder Pflichten und ist daher rein redaktionell."
+      }
+    }
+  ],
+  "shortfall_reason": null,
+  "prompt_settings": {
+    "model": "gpt-5.1",
+    "temperature": 0.4
+  },
+  "output_dir": "runs/run-20251204T152702Z-seed1764862022"
+}

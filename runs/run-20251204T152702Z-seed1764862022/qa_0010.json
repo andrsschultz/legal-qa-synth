@@ -1,0 +1,35 @@
+{
+  "question_text": "Eine Ärztin wird im Rahmen einer steuerlichen Außenprüfung am 15.10.2020 von der Finanzbehörde als Zeugin zu Vorgängen aus ihrer ärztlichen Tätigkeit vernommen. Sie möchte die Auskunft über patientenbezogene Tatsachen verweigern. Kann sie sich an diesem Tag auf ein Auskunftsverweigerungsrecht nach der Abgabenordnung berufen?",
+  "answer_text": "Ja, die Ärztin kann sich am 15.10.2020 auf ein Auskunftsverweigerungsrecht berufen. Nach der ab dem 01.09.2020 geltenden Fassung des § 102 AO sind unter anderem Ärzte als in § 102 AO Abs. 1 Nr. 3 Buchst. c AO genannte Berufsgeheimnisträger zur Verweigerung der Auskunft über das berechtigt, was ihnen in dieser Eigenschaft anvertraut oder bekannt geworden ist (§ 102 AO Abs. 1 Nr. 3 AO).",
+  "legal_basis": [
+    {
+      "law": "AO",
+      "citation": "§ 102 AO Abs. 1 Nr. 3 Buchst. c",
+      "version_valid_from": "2020-09-01",
+      "version_valid_to": null
+    },
+    {
+      "law": "AO",
+      "citation": "§ 102 AO Abs. 1 Nr. 3",
+      "version_valid_from": "2020-09-01",
+      "version_valid_to": null
+    }
+  ],
+  "relevant_fact_date": "2020-10-15",
+  "source_versions": [
+    {
+      "file": "data/AO/s102/ao_s102_until_2020-09-01.json",
+      "valid_from": "2020-01-01",
+      "valid_to": "2020-09-01"
+    },
+    {
+      "file": "data/AO/s102/ao_s102_current.json",
+      "valid_from": "2020-09-01",
+      "valid_to": null
+    }
+  ],
+  "validation": {
+    "status": "pass",
+    "issues": []
+  }
+}

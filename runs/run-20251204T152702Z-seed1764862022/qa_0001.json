@@ -1,0 +1,29 @@
+{
+  "question_text": "Darf das Finanzamt Informationen, die es im Rahmen der zwischenstaatlichen Amts- und Rechtshilfe am 20.01.2020 erhalten und verarbeitet hat, statistisch anonymisiert aufbereiten und diese statistischen Daten öffentlich zugänglich machen?",
+  "answer_text": "Ja, am 20.01.2020 durften Informationen, die im Zuge der zwischenstaatlichen Amts- und Rechtshilfe verarbeitet wurden, statistisch pseudonymisiert oder anonymisiert aufbereitet und die so gewonnenen statistischen Daten öffentlich zugänglich gemacht werden.",
+  "legal_basis": [
+    {
+      "law": "AO",
+      "citation": "§ 117d AO",
+      "version_valid_from": "2019-12-18",
+      "version_valid_to": null
+    }
+  ],
+  "relevant_fact_date": "2020-01-20",
+  "source_versions": [
+    {
+      "file": "data/AO/s117d/ao_s117d_until_2019-12-18.json",
+      "valid_from": null,
+      "valid_to": "2019-12-18"
+    },
+    {
+      "file": "data/AO/s117d/ao_s117d_current.json",
+      "valid_from": "2019-12-18",
+      "valid_to": null
+    }
+  ],
+  "validation": {
+    "status": "pass",
+    "issues": []
+  }
+}
