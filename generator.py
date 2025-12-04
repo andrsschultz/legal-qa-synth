@@ -451,8 +451,6 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         api_key=api_key,
     )
     all_paragraphs = list_paragraphs_with_pairs()
-    rng.shuffle(all_paragraphs)
-
     if not all_paragraphs:
         raise RuntimeError("No paragraphs available.")
 
@@ -461,14 +459,13 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     qa_runs_meta: List[Dict[str, Any]] = []
     skipped_meta: List[Dict[str, Any]] = []
 
-    paragraph_index = 0
     qa_index = 0
-    while qa_index < args.count:
-        if paragraph_index >= len(all_paragraphs):
-            logger.write("Ran out of paragraphs after filtering editorial changes.")
-            raise RuntimeError("Not enough substantive paragraph changes to generate requested QAs.")
-        paragraph_id = all_paragraphs[paragraph_index]
-        paragraph_index += 1
+    attempts = 0
+    max_attempts = max(args.count * 5, args.count + 5)
+
+    while qa_index < args.count and attempts < max_attempts:
+        attempts += 1
+        paragraph_id = rng.choice(all_paragraphs)
         logger.write(f"QA #{qa_index+1}: paragraph -> {paragraph_id}")
         version_pair = choose_consecutive_pair(paragraph_id, rng)
         logger.write(
@@ -494,6 +491,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
         prompt = render_prompt(version_pair[0], version_pair[1], paragraph_id, 1)
         logger.write(f"QA #{qa_index+1}: rendered prompt ({len(prompt)} characters)")
+        logger.write(f"QA #{qa_index+1}: prompt content:\n{prompt}")
         try:
             llm_results = llm.generate(prompt, logger)
         except Exception as exc:
@@ -525,12 +523,20 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         )
         qa_index += 1
 
+    shortfall_reason = None
+    if qa_index < args.count:
+        shortfall_reason = f"Generated {qa_index} of {args.count} before reaching max attempts ({max_attempts})."
+        logger.write(shortfall_reason)
+
     metadata = build_metadata(
         run_dir=run_dir,
         run_id=run_id,
         seed=seed,
         qa_runs=qa_runs_meta,
         skipped=skipped_meta,
+        requested_count=args.count,
+        generated_count=qa_index,
+        shortfall_reason=shortfall_reason,
         prompt_settings={
             "model": args.model,
             "temperature": args.temperature,
