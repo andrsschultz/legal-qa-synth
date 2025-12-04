@@ -1,0 +1,54 @@
+{
+  "question_answer_pairs": [
+    {
+      "question_text": "Eine Landesfinanzbehörde führt im Rahmen eines zwischenstaatlichen Informationsaustauschs am 15.03.2015 auf Ersuchen eines anderen EU-Mitgliedstaats Ermittlungen durch. Es geht um Einkommensteuer, die von der Landesfinanzbehörde verwaltet wird. Bevor die Behörde die erlangten Auskünfte an den ersuchenden Staat übermittelt, stellt sich die Frage, ob der inländische Steuerpflichtige zwingend anzuhören ist oder ob wegen des unionsrechtlichen Informationsaustauschs eine Anhörung entfallen kann. Nach welcher Fassung des § 117 AO ist zu beurteilen, ob eine Anhörung des inländischen Beteiligten stattfinden muss, und ist im konkreten Fall eine Anhörung zwingend vorgeschrieben?",
+      "answer_text": "Maßgeblich ist die Fassung des § 117 AO, die ab dem 01.01.2013 gilt. Danach hat bei zwischenstaatlicher Rechts- und Amtshilfe, soweit Steuern betroffen sind, die von den Landesfinanzbehörden verwaltet werden, eine Anhörung des inländischen Beteiligten abweichend von § 91 Abs. 1 AO grundsätzlich stets stattzufinden. Im konkreten Fall kann die Anhörung jedoch entfallen, weil ein Informationsaustausch auf Grund des EU-Amtshilfegesetzes stattfindet; dieses stellt nach der ab 01.01.2013 geltenden Fassung einen ausdrücklichen Ausnahmegrund von der ansonsten zwingenden Anhörungspflicht dar.",
+      "legal_basis": [
+        {
+          "law": "AO",
+          "citation": "§ 117 AO Abs. 4",
+          "version_valid_from": "2013-01-01",
+          "version_valid_to": "2024-01-01"
+        }
+      ],
+      "relevant_fact_date": "2015-03-15",
+      "source_versions": [
+        {
+          "file": "AO_117_vorgaenger",
+          "valid_from": null,
+          "valid_to": "2013-01-01"
+        },
+        {
+          "file": "AO_117_nachfolger",
+          "valid_from": "2013-01-01",
+          "valid_to": "2024-01-01"
+        }
+      ]
+    }
+  ],
+  "source_versions": [
+    {
+      "file": "data/AO/s117/ao_s117_until_2013-01-01.json",
+      "valid_from": null,
+      "valid_to": "2013-01-01"
+    },
+    {
+      "file": "data/AO/s117/ao_s117_until_2024-01-01.json",
+      "valid_from": "2013-01-01",
+      "valid_to": "2024-01-01"
+    }
+  ],
+  "legal_basis": [
+    {
+      "law": "AO",
+      "citation": "§ 117 AO",
+      "version_valid_from": "2013-01-01",
+      "version_valid_to": "2024-01-01"
+    }
+  ],
+  "relevant_fact_date": "2018-07-02",
+  "validation": {
+    "status": "pass",
+    "issues": []
+  }
+}

@@ -1,0 +1,6 @@
+[2025-12-04T14:40:52.950716+00:00] Run started (seed=1764859252, model=gpt-5.1-thinking, temperature=0.4)
+[2025-12-04T14:40:52.951522+00:00] QA #1: paragraph -> s108
+[2025-12-04T14:40:52.951810+00:00] QA #1: versions ao_s108_until_2019-11-26.json -> ao_s108_current.json
+[2025-12-04T14:40:52.951867+00:00] QA #1: rendered prompt (5039 characters)
+[2025-12-04T14:40:52.951896+00:00] Sending prompt to LLM
+[2025-12-04T14:40:53.252631+00:00] QA #1: LLM call failed: HTTP Error 404: Not Found

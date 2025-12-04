@@ -1,0 +1,72 @@
+{
+  "run_id": "run-20251204T144056Z-seed1764859256",
+  "created_at": "2025-12-04T14:41:13.649239+00:00",
+  "random_seed": 1764859256,
+  "qa_runs": [
+    {
+      "qa_file": "qa_0001.json",
+      "paragraph_id": "s117",
+      "versions_used": [
+        {
+          "file": "data/AO/s117/ao_s117_until_2013-01-01.json",
+          "provision": "§ 117 AO",
+          "valid_from": null,
+          "valid_to": "2013-01-01",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al38937-0.htm"
+        },
+        {
+          "file": "data/AO/s117/ao_s117_until_2024-01-01.json",
+          "provision": "§ 117 AO",
+          "valid_from": "2013-01-01",
+          "valid_to": "2024-01-01",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al194493-0.htm"
+        }
+      ]
+    },
+    {
+      "qa_file": "qa_0002.json",
+      "paragraph_id": "s1",
+      "versions_used": [
+        {
+          "file": "data/AO/s1/ao_s1_until_2020-12-29.json",
+          "provision": "§ 1 AO",
+          "valid_from": "2018-05-25",
+          "valid_to": "2020-12-29",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al119039-0.htm"
+        },
+        {
+          "file": "data/AO/s1/ao_s1_current.json",
+          "provision": "§ 1 AO",
+          "valid_from": "2020-12-29",
+          "valid_to": null,
+          "canonical_url": "https://www.buzer.de/1_AO.htm"
+        }
+      ]
+    },
+    {
+      "qa_file": "qa_0003.json",
+      "paragraph_id": "s103",
+      "versions_used": [
+        {
+          "file": "data/AO/s103/ao_s103_until_2018-05-25.json",
+          "provision": "§ 103 AO",
+          "valid_from": null,
+          "valid_to": "2018-05-25",
+          "canonical_url": "https://www.buzer.de/gesetz/1966/al66861-0.htm"
+        },
+        {
+          "file": "data/AO/s103/ao_s103_current.json",
+          "provision": "§ 103 AO",
+          "valid_from": "2018-05-25",
+          "valid_to": null,
+          "canonical_url": "https://www.buzer.de/103_AO.htm"
+        }
+      ]
+    }
+  ],
+  "prompt_settings": {
+    "model": "gpt-5.1",
+    "temperature": 0.4
+  },
+  "output_dir": "runs/run-20251204T144056Z-seed1764859256"
+}

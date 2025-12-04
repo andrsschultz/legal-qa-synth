@@ -1,0 +1,56 @@
+{
+  "question_answer_pairs": [
+    {
+      "question_text": "Die Gemeinde G erhebt für ein Grundstück Grundsteuer (Realsteuer). Der Steuerpflichtige legt hiergegen am 15.02.2021 Einspruch ein und begehrt anschließend gerichtlichen Rechtsschutz. Ist für die von der Gemeinde verwaltete Grundsteuer im Jahr 2021 die Vorschrift des § 249 Abs. 2 Satz 2 AO entsprechend anwendbar?",
+      "answer_text": "Ja, für die von der Gemeinde verwaltete Grundsteuer ist im Jahr 2021 § 249 Abs. 2 Satz 2 AO entsprechend anwendbar, da nach der ab dem 29.12.2020 geltenden Fassung des § 1 AO Abs. 2 Nr. 6 AO diese Vorschrift ausdrücklich in den für Realsteuern entsprechend geltenden Katalog aufgenommen wurde.",
+      "legal_basis": [
+        {
+          "law": "AO",
+          "citation": "§ 1 AO Abs. 2 Nr. 6",
+          "version_valid_from": "2020-12-29",
+          "version_valid_to": null
+        }
+      ],
+      "relevant_fact_date": "2021-02-15",
+      "source_versions": [
+        {
+          "file": "AO_1_2018-05-25_2020-12-29.json",
+          "valid_from": "2018-05-25",
+          "valid_to": "2020-12-29"
+        },
+        {
+          "file": "AO_1_2020-12-29_None.json",
+          "valid_from": "2020-12-29",
+          "valid_to": null
+        }
+      ]
+    }
+  ],
+  "source_versions": [
+    {
+      "file": "data/AO/s1/ao_s1_until_2020-12-29.json",
+      "valid_from": "2018-05-25",
+      "valid_to": "2020-12-29"
+    },
+    {
+      "file": "data/AO/s1/ao_s1_current.json",
+      "valid_from": "2020-12-29",
+      "valid_to": null
+    }
+  ],
+  "legal_basis": [
+    {
+      "law": "AO",
+      "citation": "§ 1 AO",
+      "version_valid_from": "2020-12-29",
+      "version_valid_to": null
+    }
+  ],
+  "relevant_fact_date": "2020-12-29",
+  "validation": {
+    "status": "fail",
+    "issues": [
+      "Duplicate question_text in run"
+    ]
+  }
+}

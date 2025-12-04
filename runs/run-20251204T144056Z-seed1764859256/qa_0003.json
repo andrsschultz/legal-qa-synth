@@ -1,0 +1,56 @@
+{
+  "question_answer_pairs": [
+    {
+      "question_text": "Eine nicht am Verfahren beteiligte Zeugin Z wird am 10.06.2019 im Rahmen einer steuerlichen Außenprüfung vom Finanzamt als Auskunftsperson zu Vorgängen befragt, durch deren wahrheitsgemäße Beantwortung sie ihren Bruder der Gefahr einer Verfolgung wegen einer Ordnungswidrigkeit aussetzen würde. Darf Z die Auskunft auf diese Fragen verweigern?",
+      "answer_text": "Ja, Z darf die Auskunft verweigern. Am 10.06.2019 galt die Fassung des § 103 AO, nach der Personen, die nicht Beteiligte und nicht für einen Beteiligten auskunftspflichtig sind, die Auskunft auf solche Fragen verweigern können, deren Beantwortung sie selbst oder einen ihrer Angehörigen der Gefahr aussetzen würde, wegen einer Straftat oder einer Ordnungswidrigkeit verfolgt zu werden.",
+      "legal_basis": [
+        {
+          "law": "AO",
+          "citation": "§ 103 AO",
+          "version_valid_from": "2018-05-25",
+          "version_valid_to": null
+        }
+      ],
+      "relevant_fact_date": "2019-06-10",
+      "source_versions": [
+        {
+          "file": "AO_103_vorgaenger",
+          "valid_from": null,
+          "valid_to": "2018-05-25"
+        },
+        {
+          "file": "AO_103_nachfolger",
+          "valid_from": "2018-05-25",
+          "valid_to": null
+        }
+      ]
+    }
+  ],
+  "source_versions": [
+    {
+      "file": "data/AO/s103/ao_s103_until_2018-05-25.json",
+      "valid_from": null,
+      "valid_to": "2018-05-25"
+    },
+    {
+      "file": "data/AO/s103/ao_s103_current.json",
+      "valid_from": "2018-05-25",
+      "valid_to": null
+    }
+  ],
+  "legal_basis": [
+    {
+      "law": "AO",
+      "citation": "§ 103 AO",
+      "version_valid_from": "2018-05-25",
+      "version_valid_to": null
+    }
+  ],
+  "relevant_fact_date": "2018-05-25",
+  "validation": {
+    "status": "fail",
+    "issues": [
+      "Duplicate question_text in run"
+    ]
+  }
+}

@@ -129,21 +129,33 @@ def render_prompt(
 ) -> str:
     content_v1 = json.dumps({"valid_from": v1.valid_from, "valid_to": v1.valid_to, "content": v1.content}, ensure_ascii=False, indent=2)
     content_v2 = json.dumps({"valid_from": v2.valid_from, "valid_to": v2.valid_to, "content": v2.content}, ensure_ascii=False, indent=2)
-    instructions = f"""Erzeuge {num_questions} deutschsprachige Frage-Antwort-Paare zum Steuerverfahrensrecht (Abgabenordnung) anhand zweier aufeinander folgender Fassungen derselben Vorschrift.
-- Stelle sicher, dass die Frage erkennbar auf einen konkreten Sachverhalt und ein Datum Bezug nimmt.
-- Nutze ausschließlich deutsches Steuerrecht (AO) und die gegebene Vorschrift.
+    instructions = f"""Erzeuge {num_questions} deutschsprachige Frage-Antwort-Paare zu der unten angegebenen Gesetzesvorschrift anhand zweier aufeinander folgender Fassungen.
+- Formuliere die Frage so, dass das maßgebliche Datum/der Zeitraum zwingend erkannt werden muss, um die korrekte Fassungsversion anzuwenden.
+- Nutze ausschließlich die bereitgestellte Vorschrift und ihre beiden Fassungen als Rechtsgrundlage.
 - Wähle ein relevantes Datum, das in den Geltungszeitraum einer der beiden Fassungen fällt.
-- Setze in jeder `legal_basis`-Angabe den vollen Paragraphen mit „AO“, z.B. `§ {v2.provision.replace(' AO','')} AO Abs. X`.
-- Formatiere die Ausgabe als JSON-Liste mit Objekten der Form:
-{{
-  "question_text": "...",
-  "answer_text": "...",
-  "legal_basis": [{{"law": "AO", "citation": "§ ...", "version_valid_from": "...", "version_valid_to": "..."}}],
-  "relevant_fact_date": "YYYY-MM-DD",
-  "source_versions": [{{"file": "<placeholder>", "valid_from": "...", "valid_to": "..."}}
-  ]
-}}
-- Keine Erklärungen, nur JSON."""
+- Setze in jeder `legal_basis`-Angabe den vollen Paragraphen mit Gesetzesabkürzung (z.B. `§ {v2.provision.replace(' AO','')} AO Abs. X`).
+- Beispiele für Fragestellungen (nicht kopieren, nur Stil):
+  1. Ist eine in einen am 30.8.2015 geschlossenen Fitnessstudio-Nutzungsvertrag einbezogene Allgemeine Geschäftsbedingung wirksam, die vorsieht, dass eine Kündigung des Vertrags ausschließlich in Schriftform erfolgen kann?
+  2. Unternehmer U liefert am 15.11.2020 Waren an einen anderen Unternehmer und stellt hierfür eine Rechnung mit einem Umsatzsteuerausweis von 19 %. Erfolgte der Steuerausweis in zutreffender Höhe?
+  3. Der Einzelunternehmer H erzielte im Kalenderjahr 2020 Umsätze von insgesamt 21.000 Euro und erwartet für 2021 Umsätze von 30.000 Euro. Kann H im Jahr 2021 die Kleinunternehmerregelung in Anspruch nehmen?
+- Beispiel für das gewünschte JSON-Format (eine Liste mit Objekten):
+[
+  {{
+    "question_text": "Wie hoch war das monatliche Kindergeld im Jahr 2021 für das erste Kind?",
+    "answer_text": "Im Jahr 2021 betrug das monatliche Kindergeld für das erste Kind 219 Euro.",
+    "legal_basis": [
+      {{
+        "law": "EStG",
+        "citation": "§ 66 Abs. 1",
+        "version_valid_from": "2021-01-01",
+        "version_valid_to": "2022-12-31"
+      }}
+    ],
+    "relevant_fact_date": "2021-12-31",
+    "source_versions": [{{"file": "<placeholder>", "valid_from": "<date>", "valid_to": "<date>"}}]
+  }}
+]
+- Formatiere die Ausgabe genau als JSON-Liste wie oben, ohne zusätzlichen Text oder Erklärungen."""
     return "\n\n".join(
         [
             instructions,
