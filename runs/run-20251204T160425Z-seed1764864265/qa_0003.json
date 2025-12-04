@@ -1,0 +1,62 @@
+{
+  "question_answer_pairs": [
+    {
+      "question_text": "Eine Steuerfahndungsstelle ersucht am 15.06.2019 einen Steuerberater um Auskunft zu einem von ihm beratenen Mandanten im Zusammenhang mit einer möglichen Steuerhinterziehung. Der Steuerberater beruft sich darauf, dass er die Auskunft nach der damals geltenden Fassung des § 102 AO verweigern dürfe. War der Steuerberater am 15.06.2019 berechtigt, die Auskunft zu verweigern?",
+      "answer_text": "Am 15.06.2019 war der Steuerberater nach § 102 AO Abs. 1 Nr. 3 Buchst. b in der damals geltenden Fassung berechtigt, die Auskunft über das, was ihm in seiner Eigenschaft als Steuerberater anvertraut oder bekannt geworden ist, zu verweigern, sofern er nicht von der Verschwiegenheitspflicht entbunden war (§ 102 AO Abs. 3).",
+      "legal_basis": [
+        {
+          "law": "AO",
+          "citation": "§ 102 AO Abs. 1 Nr. 3 Buchst. b",
+          "version_valid_from": "2007-08-18",
+          "version_valid_to": "2020-01-01"
+        },
+        {
+          "law": "AO",
+          "citation": "§ 102 AO Abs. 3",
+          "version_valid_from": "2007-08-18",
+          "version_valid_to": "2020-01-01"
+        }
+      ],
+      "relevant_fact_date": "2019-06-15",
+      "source_versions": [
+        {
+          "file": "§102_AO_Fassung_2007-08-18_bis_2020-01-01",
+          "valid_from": "2007-08-18",
+          "valid_to": "2020-01-01"
+        },
+        {
+          "file": "§102_AO_Fassung_2020-01-01_bis_2020-09-01",
+          "valid_from": "2020-01-01",
+          "valid_to": "2020-09-01"
+        }
+      ]
+    }
+  ],
+  "source_versions": [
+    {
+      "file": "data/AO/s102/ao_s102_until_2020-01-01.json",
+      "valid_from": "2007-08-18",
+      "valid_to": "2020-01-01"
+    },
+    {
+      "file": "data/AO/s102/ao_s102_until_2020-09-01.json",
+      "valid_from": "2020-01-01",
+      "valid_to": "2020-09-01"
+    }
+  ],
+  "legal_basis": [
+    {
+      "law": "AO",
+      "citation": "§ 102 AO",
+      "version_valid_from": "2020-01-01",
+      "version_valid_to": "2020-09-01"
+    }
+  ],
+  "relevant_fact_date": "2020-05-02",
+  "validation": {
+    "status": "fail",
+    "issues": [
+      "Duplicate question_text in run"
+    ]
+  }
+}

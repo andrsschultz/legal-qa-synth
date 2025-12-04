@@ -132,7 +132,7 @@ def render_prompt(
     instructions = f"""Erzeuge {num_questions} deutschsprachige Frage-Antwort-Paare zu der unten angegebenen Gesetzesvorschrift anhand zweier aufeinander folgender Fassungen.
 - Formuliere die Frage so, dass das maßgebliche Datum/der Zeitraum zwingend erkannt werden muss, um die korrekte Fassungsversion anzuwenden.
 - Nutze ausschließlich die bereitgestellte Vorschrift und ihre beiden Fassungen als Rechtsgrundlage.
-- Wähle ein relevantes Datum, das in den Geltungszeitraum einer der beiden Fassungen fällt.
+- Wähle ein relevantes Datum, das in den Geltungszeitraum der früheren(!) der beiden Fassungen fällt.
 - Setze in jeder `legal_basis`-Angabe den vollen Paragraphen mit Gesetzesabkürzung (z.B. `§ {v2.provision.replace(' AO','')} AO Abs. X`).
 - Beispiele für Fragestellungen (nicht kopieren, nur Stil):
   1. Ist eine in einen am 30.8.2015 geschlossenen Fitnessstudio-Nutzungsvertrag einbezogene Allgemeine Geschäftsbedingung wirksam, die vorsieht, dass eine Kündigung des Vertrags ausschließlich in Schriftform erfolgen kann?

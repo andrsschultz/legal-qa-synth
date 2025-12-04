@@ -1,0 +1,771 @@
+[2025-12-04T16:04:25.987838+00:00] Run started (seed=1764864265, model=gpt-5.1, temperature=0.4)
+[2025-12-04T16:04:25.988707+00:00] QA #1: paragraph -> s102
+[2025-12-04T16:04:25.989231+00:00] QA #1: versions ao_s102_until_2020-01-01.json -> ao_s102_until_2020-09-01.json
+[2025-12-04T16:04:25.989299+00:00] Sending classification prompt to LLM
+[2025-12-04T16:04:28.150394+00:00] Classification result: substantive_change=True, reason=In Absatz 4 wird ein neuer Satz 3 eingefügt, der die Mitteilungspflichten der in Abs. 1 Nr. 3 Buchst. b genannten Personen ausdrücklich auf bestimmte Angaben nach § 138f Abs. 3 Satz 1 Nr. 1 und 4–9 er
+[2025-12-04T16:04:28.150974+00:00] QA #1: rendered prompt (8608 characters)
+[2025-12-04T16:04:28.151147+00:00] QA #1: prompt content:
+Erzeuge 1 deutschsprachige Frage-Antwort-Paare zu der unten angegebenen Gesetzesvorschrift anhand zweier aufeinander folgender Fassungen.
+- Formuliere die Frage so, dass das maßgebliche Datum/der Zeitraum zwingend erkannt werden muss, um die korrekte Fassungsversion anzuwenden.
+- Nutze ausschließlich die bereitgestellte Vorschrift und ihre beiden Fassungen als Rechtsgrundlage.
+- Wähle ein relevantes Datum, das in den Geltungszeitraum der früheren(!) der beiden Fassungen fällt.
+- Setze in jeder `legal_basis`-Angabe den vollen Paragraphen mit Gesetzesabkürzung (z.B. `§ § 102 AO Abs. X`).
+- Beispiele für Fragestellungen (nicht kopieren, nur Stil):
+  1. Ist eine in einen am 30.8.2015 geschlossenen Fitnessstudio-Nutzungsvertrag einbezogene Allgemeine Geschäftsbedingung wirksam, die vorsieht, dass eine Kündigung des Vertrags ausschließlich in Schriftform erfolgen kann?
+  2. Unternehmer U liefert am 15.11.2020 Waren an einen anderen Unternehmer und stellt hierfür eine Rechnung mit einem Umsatzsteuerausweis von 19 %. Erfolgte der Steuerausweis in zutreffender Höhe?
+  3. Der Einzelunternehmer H erzielte im Kalenderjahr 2020 Umsätze von insgesamt 21.000 Euro und erwartet für 2021 Umsätze von 30.000 Euro. Kann H im Jahr 2021 die Kleinunternehmerregelung in Anspruch nehmen?
+- Beispiel für das gewünschte JSON-Format (eine Liste mit Objekten):
+[
+  {
+    "question_text": "Wie hoch war das monatliche Kindergeld im Jahr 2021 für das erste Kind?",
+    "answer_text": "Im Jahr 2021 betrug das monatliche Kindergeld für das erste Kind 219 Euro.",
+    "legal_basis": [
+      {
+        "law": "EStG",
+        "citation": "§ 66 Abs. 1",
+        "version_valid_from": "2021-01-01",
+        "version_valid_to": "2022-12-31"
+      }
+    ],
+    "relevant_fact_date": "2021-12-31",
+    "source_versions": [{"file": "<placeholder>", "valid_from": "<date>", "valid_to": "<date>"}]
+  }
+]
+- Formatiere die Ausgabe genau als JSON-Liste wie oben, ohne zusätzlichen Text oder Erklärungen.
+
+Vorgängerversion (2007-08-18 bis 2020-01-01):
+
+{
+  "valid_from": "2007-08-18",
+  "valid_to": "2020-01-01",
+  "content": [
+    {
+      "citation": "§ 102 AO Abs. 1",
+      "text": "Die Auskunft können ferner verweigern:"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 1",
+      "text": "Geistliche über das, was ihnen in ihrer Eigenschaft als Seelsorger anvertraut worden oder bekannt geworden ist,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 2",
+      "text": "Mitglieder des Bundestages, eines Landtages oder einer zweiten Kammer über Personen, die ihnen in ihrer Eigenschaft als Mitglieder dieser Organe oder denen sie in dieser Eigenschaft Tatsachen anvertraut haben, sowie über diese Tatsachen selbst,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 3 Buchst. a",
+      "text": "Verteidiger,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 3 Buchst. b",
+      "text": "Rechtsanwälte, Patentanwälte, Notare, Steuerberater, Wirtschaftsprüfer, Steuerbevollmächtigte, vereidigte Buchprüfer,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 3 Buchst. c",
+      "text": "Ärzte, Zahnärzte, Psychologische Psychotherapeuten, Kinder- und Jugendlichenpsychotherapeuten, Apotheker und Hebammen,\nüber das, was ihnen in dieser Eigenschaft anvertraut worden oder bekannt geworden ist,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 4",
+      "text": "Personen, die bei der Vorbereitung, Herstellung oder Verbreitung von periodischen Druckwerken oder Rundfunksendungen berufsmäßig mitwirken oder mitgewirkt haben, über die Person des Verfassers, Einsenders oder Gewährsmanns von Beiträgen und Unterlagen sowie über die ihnen im Hinblick auf ihre Tätigkeit gemachten Mitteilungen, soweit es sich um Beiträge, Unterlagen und Mitteilungen für den redaktionellen Teil handelt; § 160 bleibt unberührt."
+    },
+    {
+      "citation": "§ 102 AO Abs. 2",
+      "text": "1 Den im Absatz 1 Nr. 1 bis 3 genannten Personen stehen ihre Gehilfen und die Personen gleich, die zur Vorbereitung auf den Beruf an der berufsmäßigen Tätigkeit teilnehmen. 2 Über die Ausübung des Rechts dieser Hilfspersonen, die Auskunft zu verweigern, entscheiden die im Absatz 1 Nr. 1 bis 3 genannten Personen, es sei denn, dass diese Entscheidung in absehbarer Zeit nicht herbeigeführt werden kann."
+    },
+    {
+      "citation": "§ 102 AO Abs. 3",
+      "text": "1 Die in Absatz 1 Nr. 3 genannten Personen dürfen die Auskunft nicht verweigern, wenn sie von der Verpflichtung zur Verschwiegenheit entbunden sind. 2 Die Entbindung von der Verpflichtung zur Verschwiegenheit gilt auch für die Hilfspersonen."
+    },
+    {
+      "citation": "§ 102 AO Abs. 4",
+      "text": "1 Die gesetzlichen Anzeigepflichten der Notare und die Mitteilungspflichten der in Absatz 1 Nr. 3 Buchstabe b bezeichneten Personen nach der Zinsinformationsverordnung vom 26. Januar 2004 (BGBl. I S. 128), die zuletzt durch Artikel 4 Abs. 28 des Gesetzes vom 22. September 2005 (BGBl. I S. 2809) geändert worden ist, in der jeweils geltenden Fassung bleiben unberührt. 2 Soweit die Anzeigepflichten bestehen, sind die Notare auch zur Vorlage von Urkunden und zur Erteilung weiterer Auskünfte verpflichtet."
+    }
+  ]
+}
+
+Nachfolgerversion (2020-01-01 bis 2020-09-01):
+
+{
+  "valid_from": "2020-01-01",
+  "valid_to": "2020-09-01",
+  "content": [
+    {
+      "citation": "§ 102 AO Abs. 1",
+      "text": "Die Auskunft können ferner verweigern:"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 1",
+      "text": "Geistliche über das, was ihnen in ihrer Eigenschaft als Seelsorger anvertraut worden oder bekannt geworden ist,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 2",
+      "text": "Mitglieder des Bundestages, eines Landtages oder einer zweiten Kammer über Personen, die ihnen in ihrer Eigenschaft als Mitglieder dieser Organe oder denen sie in dieser Eigenschaft Tatsachen anvertraut haben, sowie über diese Tatsachen selbst,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 3 Buchst. a",
+      "text": "Verteidiger,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 3 Buchst. b",
+      "text": "Rechtsanwälte, Patentanwälte, Notare, Steuerberater, Wirtschaftsprüfer, Steuerbevollmächtigte, vereidigte Buchprüfer,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 3 Buchst. c",
+      "text": "Ärzte, Zahnärzte, Psychologische Psychotherapeuten, Kinder- und Jugendlichenpsychotherapeuten, Apotheker und Hebammen, über das, was ihnen in dieser Eigenschaft anvertraut worden oder bekannt geworden ist,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 4",
+      "text": "Personen, die bei der Vorbereitung, Herstellung oder Verbreitung von periodischen Druckwerken oder Rundfunksendungen berufsmäßig mitwirken oder mitgewirkt haben, über die Person des Verfassers, Einsenders oder Gewährsmanns von Beiträgen und Unterlagen sowie über die ihnen im Hinblick auf ihre Tätigkeit gemachten Mitteilungen, soweit es sich um Beiträge, Unterlagen und Mitteilungen für den redaktionellen Teil handelt; § 160 bleibt unberührt."
+    },
+    {
+      "citation": "§ 102 AO Abs. 2",
+      "text": "1 Den im Absatz 1 Nr. 1 bis 3 genannten Personen stehen ihre Gehilfen und die Personen gleich, die zur Vorbereitung auf den Beruf an der berufsmäßigen Tätigkeit teilnehmen. 2 Über die Ausübung des Rechts dieser Hilfspersonen, die Auskunft zu verweigern, entscheiden die im Absatz 1 Nr. 1 bis 3 genannten Personen, es sei denn, dass diese Entscheidung in absehbarer Zeit nicht herbeigeführt werden kann."
+    },
+    {
+      "citation": "§ 102 AO Abs. 3",
+      "text": "1 Die in Absatz 1 Nr. 3 genannten Personen dürfen die Auskunft nicht verweigern, wenn sie von der Verpflichtung zur Verschwiegenheit entbunden sind. 2 Die Entbindung von der Verpflichtung zur Verschwiegenheit gilt auch für die Hilfspersonen."
+    },
+    {
+      "citation": "§ 102 AO Abs. 4",
+      "text": "1 Die gesetzlichen Anzeigepflichten der Notare und die Mitteilungspflichten der in Absatz 1 Nr. 3 Buchstabe b bezeichneten Personen nach der Zinsinformationsverordnung vom 26. Januar 2004 (BGBl. I S. 128), die zuletzt durch Artikel 4 Abs. 28 des Gesetzes vom 22. September 2005 (BGBl. I S. 2809) geändert worden ist, in der jeweils geltenden Fassung bleiben unberührt. 2 Soweit die Anzeigepflichten bestehen, sind die Notare auch zur Vorlage von Urkunden und zur Erteilung weiterer Auskünfte verpflichtet. 3 Die Mitteilungspflichten der in Absatz 1 Nummer 3 Buchstabe b bezeichneten Personen hinsichtlich der in § 138f Absatz 3 Satz 1 Nummer 1 und 4 bis 9 bezeichneten Angaben bestehen auch dann, wenn mit diesen Angaben betroffene Nutzer identifizierbar sein sollten."
+    }
+  ]
+}
+[2025-12-04T16:04:28.152080+00:00] Sending prompt to LLM
+[2025-12-04T16:04:33.710405+00:00] LLM returned 1 items
+[2025-12-04T16:04:33.712024+00:00] QA #1: wrote qa_0001.json with status=pass
+[2025-12-04T16:04:33.712290+00:00] QA #2: paragraph -> s116
+[2025-12-04T16:04:33.714376+00:00] QA #2: versions ao_s116_until_2007-12-29.json -> ao_s116_current.json
+[2025-12-04T16:04:33.714583+00:00] Sending classification prompt to LLM
+[2025-12-04T16:04:36.231209+00:00] Classification result: substantive_change=True, reason=Abs. 1 erweitert die Adressaten der Mitteilungspflicht (nun auch unmittelbare Mitteilung an die für das Steuerstrafverfahren zuständigen Finanzbehörden), regelt die Weiterleitungspflichten des Bundesz
+[2025-12-04T16:04:36.231884+00:00] QA #2: rendered prompt (3731 characters)
+[2025-12-04T16:04:36.232130+00:00] QA #2: prompt content:
+Erzeuge 1 deutschsprachige Frage-Antwort-Paare zu der unten angegebenen Gesetzesvorschrift anhand zweier aufeinander folgender Fassungen.
+- Formuliere die Frage so, dass das maßgebliche Datum/der Zeitraum zwingend erkannt werden muss, um die korrekte Fassungsversion anzuwenden.
+- Nutze ausschließlich die bereitgestellte Vorschrift und ihre beiden Fassungen als Rechtsgrundlage.
+- Wähle ein relevantes Datum, das in den Geltungszeitraum der früheren(!) der beiden Fassungen fällt.
+- Setze in jeder `legal_basis`-Angabe den vollen Paragraphen mit Gesetzesabkürzung (z.B. `§ § 116 AO Abs. X`).
+- Beispiele für Fragestellungen (nicht kopieren, nur Stil):
+  1. Ist eine in einen am 30.8.2015 geschlossenen Fitnessstudio-Nutzungsvertrag einbezogene Allgemeine Geschäftsbedingung wirksam, die vorsieht, dass eine Kündigung des Vertrags ausschließlich in Schriftform erfolgen kann?
+  2. Unternehmer U liefert am 15.11.2020 Waren an einen anderen Unternehmer und stellt hierfür eine Rechnung mit einem Umsatzsteuerausweis von 19 %. Erfolgte der Steuerausweis in zutreffender Höhe?
+  3. Der Einzelunternehmer H erzielte im Kalenderjahr 2020 Umsätze von insgesamt 21.000 Euro und erwartet für 2021 Umsätze von 30.000 Euro. Kann H im Jahr 2021 die Kleinunternehmerregelung in Anspruch nehmen?
+- Beispiel für das gewünschte JSON-Format (eine Liste mit Objekten):
+[
+  {
+    "question_text": "Wie hoch war das monatliche Kindergeld im Jahr 2021 für das erste Kind?",
+    "answer_text": "Im Jahr 2021 betrug das monatliche Kindergeld für das erste Kind 219 Euro.",
+    "legal_basis": [
+      {
+        "law": "EStG",
+        "citation": "§ 66 Abs. 1",
+        "version_valid_from": "2021-01-01",
+        "version_valid_to": "2022-12-31"
+      }
+    ],
+    "relevant_fact_date": "2021-12-31",
+    "source_versions": [{"file": "<placeholder>", "valid_from": "<date>", "valid_to": "<date>"}]
+  }
+]
+- Formatiere die Ausgabe genau als JSON-Liste wie oben, ohne zusätzlichen Text oder Erklärungen.
+
+Vorgängerversion (2006-09-12 bis 2007-12-29):
+
+{
+  "valid_from": "2006-09-12",
+  "valid_to": "2007-12-29",
+  "content": [
+    {
+      "citation": "§ 116 AO Abs. 1",
+      "text": "Gerichte und die Behörden von Bund, Ländern und kommunalen Trägern der öffentlichen Verwaltung, die nicht Finanzbehörden sind, haben Tatsachen, die sie dienstlich erfahren und die auf eine Steuerstraftat schließen lassen, dem Bundeszentralamt für Steuern mitzuteilen. Das Bundeszentralamt für Steuern teilt diese Tatsachen den für das Strafverfahren zuständigen Behörden mit."
+    },
+    {
+      "citation": "§ 116 AO Abs. 2",
+      "text": "§ 105 Abs. 2 gilt entsprechend."
+    }
+  ]
+}
+
+Nachfolgerversion (2007-12-29 bis None):
+
+{
+  "valid_from": "2007-12-29",
+  "valid_to": null,
+  "content": [
+    {
+      "citation": "§ 116 AO Abs. 1",
+      "text": "1 Gerichte und die Behörden von Bund, Ländern und kommunalen Trägern der öffentlichen Verwaltung, die nicht Finanzbehörden sind, haben Tatsachen, die sie dienstlich erfahren und die auf eine Steuerstraftat schließen lassen, dem Bundeszentralamt für Steuern oder, soweit bekannt, den für das Steuerstrafverfahren zuständigen Finanzbehörden mitzuteilen. 2 Soweit die für das Steuerstrafverfahren zuständigen Finanzbehörden nicht bereits erkennbar unmittelbar informiert worden sind, teilt das Bundeszentralamt für Steuern ihnen diese Tatsachen mit. 3 Die für das Steuerstrafverfahren zuständigen Finanzbehörden, ausgenommen die Behörden der Bundeszollverwaltung, übermitteln die Mitteilung an das Bundeszentralamt für Steuern, soweit dieses nicht bereits erkennbar unmittelbar in Kenntnis gesetzt worden ist."
+    },
+    {
+      "citation": "§ 116 AO Abs. 2",
+      "text": "§ 105 Abs. 2 gilt entsprechend."
+    }
+  ]
+}
+[2025-12-04T16:04:36.232795+00:00] Sending prompt to LLM
+[2025-12-04T16:04:42.374901+00:00] LLM returned 1 items
+[2025-12-04T16:04:42.375490+00:00] QA #2: relevant_fact_date 2007-12-29 liegt im offenen Geltungszeitraum der aktuellen Fassung; skipping
+[2025-12-04T16:04:42.375986+00:00] QA #2: paragraph -> s103
+[2025-12-04T16:04:42.377403+00:00] QA #2: versions ao_s103_until_2018-05-25.json -> ao_s103_current.json
+[2025-12-04T16:04:42.377644+00:00] Sending classification prompt to LLM
+[2025-12-04T16:04:43.968827+00:00] Classification result: substantive_change=False, reason=Nur sprachliche Umstellung des Satzbaus („der Gefahr strafgerichtlicher Verfolgung oder eines Verfahrens nach dem Gesetz über Ordnungswidrigkeiten aussetzen würde“ zu „der Gefahr aussetzen würde, wege
+[2025-12-04T16:04:43.970582+00:00] QA #2: classification says editorial (Nur sprachliche Umstellung des Satzbaus („der Gefahr strafgerichtlicher Verfolgung oder eines Verfahrens nach dem Gesetz über Ordnungswidrigkeiten aussetzen würde“ zu „der Gefahr aussetzen würde, wegen einer Straftat oder einer Ordnungswidrigkeit verfolgt zu werden“); Rechte, Pflichten, Personenkreis und Voraussetzungen bleiben unverändert.); skipping paragraph
+[2025-12-04T16:04:43.970864+00:00] QA #2: paragraph -> s116
+[2025-12-04T16:04:43.972635+00:00] QA #2: versions ao_s116_until_2007-12-29.json -> ao_s116_current.json
+[2025-12-04T16:04:43.972897+00:00] Sending classification prompt to LLM
+[2025-12-04T16:04:45.652844+00:00] Classification result: substantive_change=True, reason=Abs. 1 erweitert die Adressaten der Mitteilungspflicht (nun auch unmittelbare Mitteilung an die für das Steuerstrafverfahren zuständigen Finanzbehörden), regelt die Weiterleitungspflichten zwischen Bu
+[2025-12-04T16:04:45.653331+00:00] QA #2: rendered prompt (3731 characters)
+[2025-12-04T16:04:45.653549+00:00] QA #2: prompt content:
+Erzeuge 1 deutschsprachige Frage-Antwort-Paare zu der unten angegebenen Gesetzesvorschrift anhand zweier aufeinander folgender Fassungen.
+- Formuliere die Frage so, dass das maßgebliche Datum/der Zeitraum zwingend erkannt werden muss, um die korrekte Fassungsversion anzuwenden.
+- Nutze ausschließlich die bereitgestellte Vorschrift und ihre beiden Fassungen als Rechtsgrundlage.
+- Wähle ein relevantes Datum, das in den Geltungszeitraum der früheren(!) der beiden Fassungen fällt.
+- Setze in jeder `legal_basis`-Angabe den vollen Paragraphen mit Gesetzesabkürzung (z.B. `§ § 116 AO Abs. X`).
+- Beispiele für Fragestellungen (nicht kopieren, nur Stil):
+  1. Ist eine in einen am 30.8.2015 geschlossenen Fitnessstudio-Nutzungsvertrag einbezogene Allgemeine Geschäftsbedingung wirksam, die vorsieht, dass eine Kündigung des Vertrags ausschließlich in Schriftform erfolgen kann?
+  2. Unternehmer U liefert am 15.11.2020 Waren an einen anderen Unternehmer und stellt hierfür eine Rechnung mit einem Umsatzsteuerausweis von 19 %. Erfolgte der Steuerausweis in zutreffender Höhe?
+  3. Der Einzelunternehmer H erzielte im Kalenderjahr 2020 Umsätze von insgesamt 21.000 Euro und erwartet für 2021 Umsätze von 30.000 Euro. Kann H im Jahr 2021 die Kleinunternehmerregelung in Anspruch nehmen?
+- Beispiel für das gewünschte JSON-Format (eine Liste mit Objekten):
+[
+  {
+    "question_text": "Wie hoch war das monatliche Kindergeld im Jahr 2021 für das erste Kind?",
+    "answer_text": "Im Jahr 2021 betrug das monatliche Kindergeld für das erste Kind 219 Euro.",
+    "legal_basis": [
+      {
+        "law": "EStG",
+        "citation": "§ 66 Abs. 1",
+        "version_valid_from": "2021-01-01",
+        "version_valid_to": "2022-12-31"
+      }
+    ],
+    "relevant_fact_date": "2021-12-31",
+    "source_versions": [{"file": "<placeholder>", "valid_from": "<date>", "valid_to": "<date>"}]
+  }
+]
+- Formatiere die Ausgabe genau als JSON-Liste wie oben, ohne zusätzlichen Text oder Erklärungen.
+
+Vorgängerversion (2006-09-12 bis 2007-12-29):
+
+{
+  "valid_from": "2006-09-12",
+  "valid_to": "2007-12-29",
+  "content": [
+    {
+      "citation": "§ 116 AO Abs. 1",
+      "text": "Gerichte und die Behörden von Bund, Ländern und kommunalen Trägern der öffentlichen Verwaltung, die nicht Finanzbehörden sind, haben Tatsachen, die sie dienstlich erfahren und die auf eine Steuerstraftat schließen lassen, dem Bundeszentralamt für Steuern mitzuteilen. Das Bundeszentralamt für Steuern teilt diese Tatsachen den für das Strafverfahren zuständigen Behörden mit."
+    },
+    {
+      "citation": "§ 116 AO Abs. 2",
+      "text": "§ 105 Abs. 2 gilt entsprechend."
+    }
+  ]
+}
+
+Nachfolgerversion (2007-12-29 bis None):
+
+{
+  "valid_from": "2007-12-29",
+  "valid_to": null,
+  "content": [
+    {
+      "citation": "§ 116 AO Abs. 1",
+      "text": "1 Gerichte und die Behörden von Bund, Ländern und kommunalen Trägern der öffentlichen Verwaltung, die nicht Finanzbehörden sind, haben Tatsachen, die sie dienstlich erfahren und die auf eine Steuerstraftat schließen lassen, dem Bundeszentralamt für Steuern oder, soweit bekannt, den für das Steuerstrafverfahren zuständigen Finanzbehörden mitzuteilen. 2 Soweit die für das Steuerstrafverfahren zuständigen Finanzbehörden nicht bereits erkennbar unmittelbar informiert worden sind, teilt das Bundeszentralamt für Steuern ihnen diese Tatsachen mit. 3 Die für das Steuerstrafverfahren zuständigen Finanzbehörden, ausgenommen die Behörden der Bundeszollverwaltung, übermitteln die Mitteilung an das Bundeszentralamt für Steuern, soweit dieses nicht bereits erkennbar unmittelbar in Kenntnis gesetzt worden ist."
+    },
+    {
+      "citation": "§ 116 AO Abs. 2",
+      "text": "§ 105 Abs. 2 gilt entsprechend."
+    }
+  ]
+}
+[2025-12-04T16:04:45.654090+00:00] Sending prompt to LLM
+[2025-12-04T16:04:50.974782+00:00] LLM returned 1 items
+[2025-12-04T16:04:50.975322+00:00] QA #2: relevant_fact_date 2007-12-29 liegt im offenen Geltungszeitraum der aktuellen Fassung; skipping
+[2025-12-04T16:04:50.975628+00:00] QA #2: paragraph -> s117c
+[2025-12-04T16:04:50.978064+00:00] QA #2: versions ao_s117c_until_2017-06-25.json -> ao_s117c_until_2024-12-06.json
+[2025-12-04T16:04:50.978314+00:00] Sending classification prompt to LLM
+[2025-12-04T16:04:54.562964+00:00] Classification result: substantive_change=True, reason=In Abs. 2 entfällt der Verweis auf die Nichtanwendbarkeit des § 30a Abs. 2 und 3 AO; damit gelten diese Schutzvorschriften nun wieder und die Rechtsposition der Betroffenen ändert sich materiell. In A
+[2025-12-04T16:04:54.564583+00:00] QA #2: rendered prompt (8250 characters)
+[2025-12-04T16:04:54.564748+00:00] QA #2: prompt content:
+Erzeuge 1 deutschsprachige Frage-Antwort-Paare zu der unten angegebenen Gesetzesvorschrift anhand zweier aufeinander folgender Fassungen.
+- Formuliere die Frage so, dass das maßgebliche Datum/der Zeitraum zwingend erkannt werden muss, um die korrekte Fassungsversion anzuwenden.
+- Nutze ausschließlich die bereitgestellte Vorschrift und ihre beiden Fassungen als Rechtsgrundlage.
+- Wähle ein relevantes Datum, das in den Geltungszeitraum der früheren(!) der beiden Fassungen fällt.
+- Setze in jeder `legal_basis`-Angabe den vollen Paragraphen mit Gesetzesabkürzung (z.B. `§ § 117c AO Abs. X`).
+- Beispiele für Fragestellungen (nicht kopieren, nur Stil):
+  1. Ist eine in einen am 30.8.2015 geschlossenen Fitnessstudio-Nutzungsvertrag einbezogene Allgemeine Geschäftsbedingung wirksam, die vorsieht, dass eine Kündigung des Vertrags ausschließlich in Schriftform erfolgen kann?
+  2. Unternehmer U liefert am 15.11.2020 Waren an einen anderen Unternehmer und stellt hierfür eine Rechnung mit einem Umsatzsteuerausweis von 19 %. Erfolgte der Steuerausweis in zutreffender Höhe?
+  3. Der Einzelunternehmer H erzielte im Kalenderjahr 2020 Umsätze von insgesamt 21.000 Euro und erwartet für 2021 Umsätze von 30.000 Euro. Kann H im Jahr 2021 die Kleinunternehmerregelung in Anspruch nehmen?
+- Beispiel für das gewünschte JSON-Format (eine Liste mit Objekten):
+[
+  {
+    "question_text": "Wie hoch war das monatliche Kindergeld im Jahr 2021 für das erste Kind?",
+    "answer_text": "Im Jahr 2021 betrug das monatliche Kindergeld für das erste Kind 219 Euro.",
+    "legal_basis": [
+      {
+        "law": "EStG",
+        "citation": "§ 66 Abs. 1",
+        "version_valid_from": "2021-01-01",
+        "version_valid_to": "2022-12-31"
+      }
+    ],
+    "relevant_fact_date": "2021-12-31",
+    "source_versions": [{"file": "<placeholder>", "valid_from": "<date>", "valid_to": "<date>"}]
+  }
+]
+- Formatiere die Ausgabe genau als JSON-Liste wie oben, ohne zusätzlichen Text oder Erklärungen.
+
+Vorgängerversion (2017-01-01 bis 2017-06-25):
+
+{
+  "valid_from": "2017-01-01",
+  "valid_to": "2017-06-25",
+  "content": [
+    {
+      "citation": "§ 117c AO Abs. 1",
+      "text": "1 Das Bundesministerium der Finanzen wird ermächtigt, zur Erfüllung der Verpflichtungen aus innerstaatlich anwendbaren völkerrechtlichen Vereinbarungen, die der Förderung der Steuerehrlichkeit durch systematische Erhebung und Übermittlung steuerlich relevanter Daten dienen, durch Rechtsverordnungen mit Zustimmung des Bundesrates Regelungen zu treffen über"
+    },
+    {
+      "citation": "§ 117c AO Abs. 1 Nr. 1",
+      "text": "die Erhebung der nach diesen Vereinbarungen erforderlichen Daten durch in diesen Vereinbarungen dem Grunde nach bestimmte Dritte,"
+    },
+    {
+      "citation": "§ 117c AO Abs. 1 Nr. 2",
+      "text": "die Übermittlung dieser Daten nach amtlich vorgeschriebenem Datensatz im Wege der Datenfernübertragung an das Bundeszentralamt für Steuern,"
+    },
+    {
+      "citation": "§ 117c AO Abs. 1 Nr. 3",
+      "text": "die Weiterleitung dieser Daten an die zuständige Behörde des anderen Vertragsstaates sowie"
+    },
+    {
+      "citation": "§ 117c AO Abs. 1 Nr. 4",
+      "text": "die Entgegennahme entsprechender Daten von dem anderen Vertragsstaat und deren Weiterleitung nach Maßgabe des § 88 Absatz 3 und 4 an die zuständige Landesfinanzbehörde.\n 2 In einer Rechtsverordnung nach Satz 1 kann dem Bundeszentralamt für Steuern das Recht eingeräumt werden, die Daten und Meldungen nach § 9 Absatz 1 und 2 der FATCA-USA-Umsetzungsverordnung zur Erfüllung der dem Bundeszentralamt für Steuern gesetzlich übertragenen Aufgaben auszuwerten. 3 Auswertungen der Meldungen nach § 9 Absatz 2 der FATCA-USA-Umsetzungsverordnung durch die jeweils zuständige Landesfinanzbehörde bleiben hiervon unberührt."
+    },
+    {
+      "citation": "§ 117c AO Abs. 2",
+      "text": "1 Bei der Übermittlung von Daten durch das Bundeszentralamt für Steuern an die zuständige Finanzbehörde des anderen Vertragsstaates nach einer auf Grund des Absatzes 1 Satz 1 erlassenen Rechtsverordnung findet eine Anhörung der Beteiligten nicht statt. 2 § 30a Absatz 2 und 3 gilt nicht."
+    },
+    {
+      "citation": "§ 117c AO Abs. 3",
+      "text": "1 Das Bundeszentralamt für Steuern ist berechtigt, Verhältnisse, die für die Erfüllung der Pflichten zur Erhebung und Übermittlung von Daten nach einer auf Grund des Absatzes 1 erlassenen Rechtsverordnung von Bedeutung sind oder der Aufklärung bedürfen, bei den zur Erhebung dieser Daten und deren Übermittlung an das Bundeszentralamt für Steuern Verpflichteten zu prüfen. 2 Die §§ 193 bis 203 gelten sinngemäß."
+    },
+    {
+      "citation": "§ 117c AO Abs. 4",
+      "text": "1 Die auf Grund einer Rechtsverordnung nach Absatz 1 oder im Rahmen einer Prüfung nach Absatz 3 vom Bundeszentralamt für Steuern erhobenen Daten dürfen nur für die in den zugrunde liegenden völkerrechtlichen Vereinbarungen festgelegten Zwecke verwendet werden. 2 Bei der Übermittlung der länderbezogenen Berichte durch das Bundeszentralamt für Steuern gemäß § 138a Absatz 6 Satz 4 bis 6 findet keine Anhörung der Beteiligten statt."
+    }
+  ]
+}
+
+Nachfolgerversion (2017-06-25 bis 2024-12-06):
+
+{
+  "valid_from": "2017-06-25",
+  "valid_to": "2024-12-06",
+  "content": [
+    {
+      "citation": "§ 117c AO Abs. 1",
+      "text": "1 Das Bundesministerium der Finanzen wird ermächtigt, zur Erfüllung der Verpflichtungen aus innerstaatlich anwendbaren völkerrechtlichen Vereinbarungen, die der Förderung der Steuerehrlichkeit durch systematische Erhebung und Übermittlung steuerlich relevanter Daten dienen, durch Rechtsverordnungen mit Zustimmung des Bundesrates Regelungen zu treffen über"
+    },
+    {
+      "citation": "§ 117c AO Abs. 1 Nr. 1",
+      "text": "die Erhebung der nach diesen Vereinbarungen erforderlichen Daten durch in diesen Vereinbarungen dem Grunde nach bestimmte Dritte,"
+    },
+    {
+      "citation": "§ 117c AO Abs. 1 Nr. 2",
+      "text": "die Übermittlung dieser Daten nach amtlich vorgeschriebenem Datensatz im Wege der Datenfernübertragung an das Bundeszentralamt für Steuern,"
+    },
+    {
+      "citation": "§ 117c AO Abs. 1 Nr. 3",
+      "text": "die Weiterleitung dieser Daten an die zuständige Behörde des anderen Vertragsstaates sowie"
+    },
+    {
+      "citation": "§ 117c AO Abs. 1 Nr. 4",
+      "text": "die Entgegennahme entsprechender Daten von dem anderen Vertragsstaat und deren Weiterleitung nach Maßgabe des § 88 Absatz 3 und 4 an die zuständige Landesfinanzbehörde. 2 In einer Rechtsverordnung nach Satz 1 kann dem Bundeszentralamt für Steuern das Recht eingeräumt werden, die Daten und Meldungen nach § 9 Absatz 1 und 2 der FATCA-USA-Umsetzungsverordnung zur Erfüllung der dem Bundeszentralamt für Steuern gesetzlich übertragenen Aufgaben auszuwerten. 3 Auswertungen der Meldungen nach § 9 Absatz 2 der FATCA-USA-Umsetzungsverordnung durch die jeweils zuständige Landesfinanzbehörde bleiben hiervon unberührt."
+    },
+    {
+      "citation": "§ 117c AO Abs. 2",
+      "text": "Bei der Übermittlung von Daten durch das Bundeszentralamt für Steuern an die zuständige Finanzbehörde des anderen Vertragsstaates nach einer auf Grund des Absatzes 1 Satz 1 erlassenen Rechtsverordnung findet eine Anhörung der Beteiligten nicht statt."
+    },
+    {
+      "citation": "§ 117c AO Abs. 3",
+      "text": "1 Das Bundeszentralamt für Steuern ist berechtigt, Verhältnisse, die für die Erfüllung der Pflichten zur Erhebung und Übermittlung von Daten nach einer auf Grund des Absatzes 1 erlassenen Rechtsverordnung von Bedeutung sind oder der Aufklärung bedürfen, bei den zur Erhebung dieser Daten und deren Übermittlung an das Bundeszentralamt für Steuern Verpflichteten zu prüfen. 2 Die §§ 193 bis 203 gelten sinngemäß."
+    },
+    {
+      "citation": "§ 117c AO Abs. 4",
+      "text": "1 Die auf Grund einer Rechtsverordnung nach Absatz 1 oder im Rahmen einer Prüfung nach Absatz 3 vom Bundeszentralamt für Steuern erhobenen Daten dürfen nur für die in den zugrunde liegenden völkerrechtlichen Vereinbarungen festgelegten Zwecke verwendet werden. 2 Bei der Übermittlung der länderbezogenen Berichte durch das Bundeszentralamt für Steuern gemäß § 138a Absatz 7 Satz 1 bis 3 findet keine Anhörung der Beteiligten statt."
+    }
+  ]
+}
+[2025-12-04T16:04:54.565253+00:00] Sending prompt to LLM
+[2025-12-04T16:04:58.655983+00:00] LLM returned 1 items
+[2025-12-04T16:04:58.656677+00:00] QA #2: wrote qa_0002.json with status=fail
+[2025-12-04T16:04:58.656769+00:00] QA #3: paragraph -> s103
+[2025-12-04T16:04:58.657405+00:00] QA #3: versions ao_s103_until_2018-05-25.json -> ao_s103_current.json
+[2025-12-04T16:04:58.657493+00:00] Sending classification prompt to LLM
+[2025-12-04T16:05:00.380213+00:00] Classification result: substantive_change=False, reason=Die Neufassung formuliert die Gefahr der Verfolgung wegen Straftat/Ordnungswidrigkeit nur sprachlich um („der Gefahr strafgerichtlicher Verfolgung oder eines Verfahrens nach dem Gesetz über Ordnungswi
+[2025-12-04T16:05:00.380712+00:00] QA #3: classification says editorial (Die Neufassung formuliert die Gefahr der Verfolgung wegen Straftat/Ordnungswidrigkeit nur sprachlich um („der Gefahr strafgerichtlicher Verfolgung oder eines Verfahrens nach dem Gesetz über Ordnungswidrigkeiten aussetzen würde“ zu „der Gefahr aussetzen würde, wegen einer Straftat oder einer Ordnungswidrigkeit verfolgt zu werden“), ohne Rechte, Pflichten oder Voraussetzungen des Auskunftsverweigerungsrechts zu ändern.); skipping paragraph
+[2025-12-04T16:05:00.380961+00:00] QA #3: paragraph -> s107
+[2025-12-04T16:05:00.381911+00:00] QA #3: versions ao_s107_until_2013-06-30.json -> ao_s107_current.json
+[2025-12-04T16:05:00.382155+00:00] Sending classification prompt to LLM
+[2025-12-04T16:05:01.933588+00:00] Classification result: substantive_change=True, reason=Der persönliche Anwendungsbereich wird auf Vorlagepflichtige erweitert und der Ausnahmetatbestand auf Personen mit Vorlagepflicht ausgedehnt; damit werden neue Entschädigungsansprüche bzw. -ausschlüss
+[2025-12-04T16:05:01.934259+00:00] QA #3: rendered prompt (3134 characters)
+[2025-12-04T16:05:01.934457+00:00] QA #3: prompt content:
+Erzeuge 1 deutschsprachige Frage-Antwort-Paare zu der unten angegebenen Gesetzesvorschrift anhand zweier aufeinander folgender Fassungen.
+- Formuliere die Frage so, dass das maßgebliche Datum/der Zeitraum zwingend erkannt werden muss, um die korrekte Fassungsversion anzuwenden.
+- Nutze ausschließlich die bereitgestellte Vorschrift und ihre beiden Fassungen als Rechtsgrundlage.
+- Wähle ein relevantes Datum, das in den Geltungszeitraum der früheren(!) der beiden Fassungen fällt.
+- Setze in jeder `legal_basis`-Angabe den vollen Paragraphen mit Gesetzesabkürzung (z.B. `§ § 107 AO Abs. X`).
+- Beispiele für Fragestellungen (nicht kopieren, nur Stil):
+  1. Ist eine in einen am 30.8.2015 geschlossenen Fitnessstudio-Nutzungsvertrag einbezogene Allgemeine Geschäftsbedingung wirksam, die vorsieht, dass eine Kündigung des Vertrags ausschließlich in Schriftform erfolgen kann?
+  2. Unternehmer U liefert am 15.11.2020 Waren an einen anderen Unternehmer und stellt hierfür eine Rechnung mit einem Umsatzsteuerausweis von 19 %. Erfolgte der Steuerausweis in zutreffender Höhe?
+  3. Der Einzelunternehmer H erzielte im Kalenderjahr 2020 Umsätze von insgesamt 21.000 Euro und erwartet für 2021 Umsätze von 30.000 Euro. Kann H im Jahr 2021 die Kleinunternehmerregelung in Anspruch nehmen?
+- Beispiel für das gewünschte JSON-Format (eine Liste mit Objekten):
+[
+  {
+    "question_text": "Wie hoch war das monatliche Kindergeld im Jahr 2021 für das erste Kind?",
+    "answer_text": "Im Jahr 2021 betrug das monatliche Kindergeld für das erste Kind 219 Euro.",
+    "legal_basis": [
+      {
+        "law": "EStG",
+        "citation": "§ 66 Abs. 1",
+        "version_valid_from": "2021-01-01",
+        "version_valid_to": "2022-12-31"
+      }
+    ],
+    "relevant_fact_date": "2021-12-31",
+    "source_versions": [{"file": "<placeholder>", "valid_from": "<date>", "valid_to": "<date>"}]
+  }
+]
+- Formatiere die Ausgabe genau als JSON-Liste wie oben, ohne zusätzlichen Text oder Erklärungen.
+
+Vorgängerversion (None bis 2013-06-30):
+
+{
+  "valid_from": null,
+  "valid_to": "2013-06-30",
+  "content": [
+    {
+      "citation": "§ 107 AO",
+      "text": "Entschädigung der Auskunftspflichtigen und der Sachverständigen \n 1 Auskunftspflichtige und Sachverständige, die die Finanzbehörde zu Beweiszwecken herangezogen hat, erhalten auf Antrag eine Entschädigung oder Vergütung in entsprechender Anwendung des Justizvergütungs- und -entschädigungsgesetzes. 2 Dies gilt nicht für die Beteiligten und für die Personen, die für die Beteiligten die Auskunftspflicht zu erfüllen haben."
+    }
+  ]
+}
+
+Nachfolgerversion (2013-06-30 bis None):
+
+{
+  "valid_from": "2013-06-30",
+  "valid_to": null,
+  "content": [
+    {
+      "citation": "§ 107 AO",
+      "text": "Auskunftspflichtige, Vorlagepflichtige und Sachverständige, die die Finanzbehörde zu Beweiszwecken herangezogen hat, erhalten auf Antrag eine Entschädigung oder Vergütung in entsprechender Anwendung des Justizvergütungs- und -entschädigungsgesetzes. Dies gilt nicht für die Beteiligten und für die Personen, die für die Beteiligten die Auskunfts- oder Vorlagepflicht zu erfüllen haben."
+    }
+  ]
+}
+[2025-12-04T16:05:01.934836+00:00] Sending prompt to LLM
+[2025-12-04T16:05:06.478345+00:00] LLM returned 1 items
+[2025-12-04T16:05:06.478701+00:00] QA #3: relevant_fact_date 2013-06-30 liegt im offenen Geltungszeitraum der aktuellen Fassung; skipping
+[2025-12-04T16:05:06.478859+00:00] QA #3: paragraph -> s117d
+[2025-12-04T16:05:06.479817+00:00] QA #3: versions ao_s117d_until_2019-12-18.json -> ao_s117d_current.json
+[2025-12-04T16:05:06.479986+00:00] Sending classification prompt to LLM
+[2025-12-04T16:05:08.683821+00:00] Classification result: substantive_change=True, reason=In Fassung A existiert keine Regelung; Fassung B führt erstmals eine Norm ein, die die statistische Aufbereitung (pseudonymisiert/anonymisiert) und öffentliche Zugänglichmachung bestimmter Information
+[2025-12-04T16:05:08.685271+00:00] QA #3: rendered prompt (2506 characters)
+[2025-12-04T16:05:08.685473+00:00] QA #3: prompt content:
+Erzeuge 1 deutschsprachige Frage-Antwort-Paare zu der unten angegebenen Gesetzesvorschrift anhand zweier aufeinander folgender Fassungen.
+- Formuliere die Frage so, dass das maßgebliche Datum/der Zeitraum zwingend erkannt werden muss, um die korrekte Fassungsversion anzuwenden.
+- Nutze ausschließlich die bereitgestellte Vorschrift und ihre beiden Fassungen als Rechtsgrundlage.
+- Wähle ein relevantes Datum, das in den Geltungszeitraum der früheren(!) der beiden Fassungen fällt.
+- Setze in jeder `legal_basis`-Angabe den vollen Paragraphen mit Gesetzesabkürzung (z.B. `§ § 117d AO Abs. X`).
+- Beispiele für Fragestellungen (nicht kopieren, nur Stil):
+  1. Ist eine in einen am 30.8.2015 geschlossenen Fitnessstudio-Nutzungsvertrag einbezogene Allgemeine Geschäftsbedingung wirksam, die vorsieht, dass eine Kündigung des Vertrags ausschließlich in Schriftform erfolgen kann?
+  2. Unternehmer U liefert am 15.11.2020 Waren an einen anderen Unternehmer und stellt hierfür eine Rechnung mit einem Umsatzsteuerausweis von 19 %. Erfolgte der Steuerausweis in zutreffender Höhe?
+  3. Der Einzelunternehmer H erzielte im Kalenderjahr 2020 Umsätze von insgesamt 21.000 Euro und erwartet für 2021 Umsätze von 30.000 Euro. Kann H im Jahr 2021 die Kleinunternehmerregelung in Anspruch nehmen?
+- Beispiel für das gewünschte JSON-Format (eine Liste mit Objekten):
+[
+  {
+    "question_text": "Wie hoch war das monatliche Kindergeld im Jahr 2021 für das erste Kind?",
+    "answer_text": "Im Jahr 2021 betrug das monatliche Kindergeld für das erste Kind 219 Euro.",
+    "legal_basis": [
+      {
+        "law": "EStG",
+        "citation": "§ 66 Abs. 1",
+        "version_valid_from": "2021-01-01",
+        "version_valid_to": "2022-12-31"
+      }
+    ],
+    "relevant_fact_date": "2021-12-31",
+    "source_versions": [{"file": "<placeholder>", "valid_from": "<date>", "valid_to": "<date>"}]
+  }
+]
+- Formatiere die Ausgabe genau als JSON-Liste wie oben, ohne zusätzlichen Text oder Erklärungen.
+
+Vorgängerversion (None bis 2019-12-18):
+
+{
+  "valid_from": null,
+  "valid_to": "2019-12-18",
+  "content": []
+}
+
+Nachfolgerversion (2019-12-18 bis None):
+
+{
+  "valid_from": "2019-12-18",
+  "valid_to": null,
+  "content": [
+    {
+      "citation": "§ 117d AO",
+      "text": "1 Informationen, die im Zuge der zwischenstaatlichen Amts- und Rechtshilfe verarbeitet werden, dürfen statistisch pseudonymisiert oder anonymisiert aufbereitet werden. 2 Diese statistischen Daten dürfen öffentlich zugänglich gemacht werden."
+    }
+  ]
+}
+[2025-12-04T16:05:08.685850+00:00] Sending prompt to LLM
+[2025-12-04T16:05:15.523589+00:00] LLM returned 1 items
+[2025-12-04T16:05:15.524267+00:00] QA #3: relevant_fact_date 2019-12-18 liegt im offenen Geltungszeitraum der aktuellen Fassung; skipping
+[2025-12-04T16:05:15.524595+00:00] QA #3: paragraph -> s117d
+[2025-12-04T16:05:15.525403+00:00] QA #3: versions ao_s117d_until_2019-12-18.json -> ao_s117d_current.json
+[2025-12-04T16:05:15.525559+00:00] Sending classification prompt to LLM
+[2025-12-04T16:05:16.925058+00:00] Classification result: substantive_change=True, reason=Mit Fassung B wird erstmals eine Regelung eingeführt, die die statistische pseudonymisierte oder anonymisierte Aufbereitung und die öffentliche Zugänglichmachung der so gewonnenen Daten ausdrücklich e
+[2025-12-04T16:05:16.925658+00:00] QA #3: rendered prompt (2506 characters)
+[2025-12-04T16:05:16.925943+00:00] QA #3: prompt content:
+Erzeuge 1 deutschsprachige Frage-Antwort-Paare zu der unten angegebenen Gesetzesvorschrift anhand zweier aufeinander folgender Fassungen.
+- Formuliere die Frage so, dass das maßgebliche Datum/der Zeitraum zwingend erkannt werden muss, um die korrekte Fassungsversion anzuwenden.
+- Nutze ausschließlich die bereitgestellte Vorschrift und ihre beiden Fassungen als Rechtsgrundlage.
+- Wähle ein relevantes Datum, das in den Geltungszeitraum der früheren(!) der beiden Fassungen fällt.
+- Setze in jeder `legal_basis`-Angabe den vollen Paragraphen mit Gesetzesabkürzung (z.B. `§ § 117d AO Abs. X`).
+- Beispiele für Fragestellungen (nicht kopieren, nur Stil):
+  1. Ist eine in einen am 30.8.2015 geschlossenen Fitnessstudio-Nutzungsvertrag einbezogene Allgemeine Geschäftsbedingung wirksam, die vorsieht, dass eine Kündigung des Vertrags ausschließlich in Schriftform erfolgen kann?
+  2. Unternehmer U liefert am 15.11.2020 Waren an einen anderen Unternehmer und stellt hierfür eine Rechnung mit einem Umsatzsteuerausweis von 19 %. Erfolgte der Steuerausweis in zutreffender Höhe?
+  3. Der Einzelunternehmer H erzielte im Kalenderjahr 2020 Umsätze von insgesamt 21.000 Euro und erwartet für 2021 Umsätze von 30.000 Euro. Kann H im Jahr 2021 die Kleinunternehmerregelung in Anspruch nehmen?
+- Beispiel für das gewünschte JSON-Format (eine Liste mit Objekten):
+[
+  {
+    "question_text": "Wie hoch war das monatliche Kindergeld im Jahr 2021 für das erste Kind?",
+    "answer_text": "Im Jahr 2021 betrug das monatliche Kindergeld für das erste Kind 219 Euro.",
+    "legal_basis": [
+      {
+        "law": "EStG",
+        "citation": "§ 66 Abs. 1",
+        "version_valid_from": "2021-01-01",
+        "version_valid_to": "2022-12-31"
+      }
+    ],
+    "relevant_fact_date": "2021-12-31",
+    "source_versions": [{"file": "<placeholder>", "valid_from": "<date>", "valid_to": "<date>"}]
+  }
+]
+- Formatiere die Ausgabe genau als JSON-Liste wie oben, ohne zusätzlichen Text oder Erklärungen.
+
+Vorgängerversion (None bis 2019-12-18):
+
+{
+  "valid_from": null,
+  "valid_to": "2019-12-18",
+  "content": []
+}
+
+Nachfolgerversion (2019-12-18 bis None):
+
+{
+  "valid_from": "2019-12-18",
+  "valid_to": null,
+  "content": [
+    {
+      "citation": "§ 117d AO",
+      "text": "1 Informationen, die im Zuge der zwischenstaatlichen Amts- und Rechtshilfe verarbeitet werden, dürfen statistisch pseudonymisiert oder anonymisiert aufbereitet werden. 2 Diese statistischen Daten dürfen öffentlich zugänglich gemacht werden."
+    }
+  ]
+}
+[2025-12-04T16:05:16.926321+00:00] Sending prompt to LLM
+[2025-12-04T16:05:18.906289+00:00] LLM returned 1 items
+[2025-12-04T16:05:18.907371+00:00] QA #3: relevant_fact_date 2019-12-18 liegt im offenen Geltungszeitraum der aktuellen Fassung; skipping
+[2025-12-04T16:05:18.907658+00:00] QA #3: paragraph -> s117d
+[2025-12-04T16:05:18.908339+00:00] QA #3: versions ao_s117d_until_2019-12-18.json -> ao_s117d_current.json
+[2025-12-04T16:05:18.908521+00:00] Sending classification prompt to LLM
+[2025-12-04T16:05:20.264067+00:00] Classification result: substantive_change=True, reason=Mit Fassung B wird eine neue Regelung eingeführt, die die statistische Aufbereitung und öffentliche Zugänglichmachung bestimmter Informationen ausdrücklich erlaubt; zuvor existierte keine entsprechend
+[2025-12-04T16:05:20.264780+00:00] QA #3: rendered prompt (2506 characters)
+[2025-12-04T16:05:20.265077+00:00] QA #3: prompt content:
+Erzeuge 1 deutschsprachige Frage-Antwort-Paare zu der unten angegebenen Gesetzesvorschrift anhand zweier aufeinander folgender Fassungen.
+- Formuliere die Frage so, dass das maßgebliche Datum/der Zeitraum zwingend erkannt werden muss, um die korrekte Fassungsversion anzuwenden.
+- Nutze ausschließlich die bereitgestellte Vorschrift und ihre beiden Fassungen als Rechtsgrundlage.
+- Wähle ein relevantes Datum, das in den Geltungszeitraum der früheren(!) der beiden Fassungen fällt.
+- Setze in jeder `legal_basis`-Angabe den vollen Paragraphen mit Gesetzesabkürzung (z.B. `§ § 117d AO Abs. X`).
+- Beispiele für Fragestellungen (nicht kopieren, nur Stil):
+  1. Ist eine in einen am 30.8.2015 geschlossenen Fitnessstudio-Nutzungsvertrag einbezogene Allgemeine Geschäftsbedingung wirksam, die vorsieht, dass eine Kündigung des Vertrags ausschließlich in Schriftform erfolgen kann?
+  2. Unternehmer U liefert am 15.11.2020 Waren an einen anderen Unternehmer und stellt hierfür eine Rechnung mit einem Umsatzsteuerausweis von 19 %. Erfolgte der Steuerausweis in zutreffender Höhe?
+  3. Der Einzelunternehmer H erzielte im Kalenderjahr 2020 Umsätze von insgesamt 21.000 Euro und erwartet für 2021 Umsätze von 30.000 Euro. Kann H im Jahr 2021 die Kleinunternehmerregelung in Anspruch nehmen?
+- Beispiel für das gewünschte JSON-Format (eine Liste mit Objekten):
+[
+  {
+    "question_text": "Wie hoch war das monatliche Kindergeld im Jahr 2021 für das erste Kind?",
+    "answer_text": "Im Jahr 2021 betrug das monatliche Kindergeld für das erste Kind 219 Euro.",
+    "legal_basis": [
+      {
+        "law": "EStG",
+        "citation": "§ 66 Abs. 1",
+        "version_valid_from": "2021-01-01",
+        "version_valid_to": "2022-12-31"
+      }
+    ],
+    "relevant_fact_date": "2021-12-31",
+    "source_versions": [{"file": "<placeholder>", "valid_from": "<date>", "valid_to": "<date>"}]
+  }
+]
+- Formatiere die Ausgabe genau als JSON-Liste wie oben, ohne zusätzlichen Text oder Erklärungen.
+
+Vorgängerversion (None bis 2019-12-18):
+
+{
+  "valid_from": null,
+  "valid_to": "2019-12-18",
+  "content": []
+}
+
+Nachfolgerversion (2019-12-18 bis None):
+
+{
+  "valid_from": "2019-12-18",
+  "valid_to": null,
+  "content": [
+    {
+      "citation": "§ 117d AO",
+      "text": "1 Informationen, die im Zuge der zwischenstaatlichen Amts- und Rechtshilfe verarbeitet werden, dürfen statistisch pseudonymisiert oder anonymisiert aufbereitet werden. 2 Diese statistischen Daten dürfen öffentlich zugänglich gemacht werden."
+    }
+  ]
+}
+[2025-12-04T16:05:20.265606+00:00] Sending prompt to LLM
+[2025-12-04T16:05:22.005272+00:00] LLM returned 1 items
+[2025-12-04T16:05:22.005970+00:00] QA #3: relevant_fact_date 2019-12-18 liegt im offenen Geltungszeitraum der aktuellen Fassung; skipping
+[2025-12-04T16:05:22.006300+00:00] QA #3: paragraph -> s102
+[2025-12-04T16:05:22.007964+00:00] QA #3: versions ao_s102_until_2020-01-01.json -> ao_s102_until_2020-09-01.json
+[2025-12-04T16:05:22.008326+00:00] Sending classification prompt to LLM
+[2025-12-04T16:05:24.523772+00:00] Classification result: substantive_change=True, reason=In Absatz 4 wird ein neuer Satz 3 eingefügt, der die Mitteilungspflichten der in Abs. 1 Nr. 3 Buchst. b genannten Personen ausdrücklich auf bestimmte Angaben nach § 138f Abs. 3 S. 1 Nr. 1 und 4–9 erst
+[2025-12-04T16:05:24.524615+00:00] QA #3: rendered prompt (8608 characters)
+[2025-12-04T16:05:24.524897+00:00] QA #3: prompt content:
+Erzeuge 1 deutschsprachige Frage-Antwort-Paare zu der unten angegebenen Gesetzesvorschrift anhand zweier aufeinander folgender Fassungen.
+- Formuliere die Frage so, dass das maßgebliche Datum/der Zeitraum zwingend erkannt werden muss, um die korrekte Fassungsversion anzuwenden.
+- Nutze ausschließlich die bereitgestellte Vorschrift und ihre beiden Fassungen als Rechtsgrundlage.
+- Wähle ein relevantes Datum, das in den Geltungszeitraum der früheren(!) der beiden Fassungen fällt.
+- Setze in jeder `legal_basis`-Angabe den vollen Paragraphen mit Gesetzesabkürzung (z.B. `§ § 102 AO Abs. X`).
+- Beispiele für Fragestellungen (nicht kopieren, nur Stil):
+  1. Ist eine in einen am 30.8.2015 geschlossenen Fitnessstudio-Nutzungsvertrag einbezogene Allgemeine Geschäftsbedingung wirksam, die vorsieht, dass eine Kündigung des Vertrags ausschließlich in Schriftform erfolgen kann?
+  2. Unternehmer U liefert am 15.11.2020 Waren an einen anderen Unternehmer und stellt hierfür eine Rechnung mit einem Umsatzsteuerausweis von 19 %. Erfolgte der Steuerausweis in zutreffender Höhe?
+  3. Der Einzelunternehmer H erzielte im Kalenderjahr 2020 Umsätze von insgesamt 21.000 Euro und erwartet für 2021 Umsätze von 30.000 Euro. Kann H im Jahr 2021 die Kleinunternehmerregelung in Anspruch nehmen?
+- Beispiel für das gewünschte JSON-Format (eine Liste mit Objekten):
+[
+  {
+    "question_text": "Wie hoch war das monatliche Kindergeld im Jahr 2021 für das erste Kind?",
+    "answer_text": "Im Jahr 2021 betrug das monatliche Kindergeld für das erste Kind 219 Euro.",
+    "legal_basis": [
+      {
+        "law": "EStG",
+        "citation": "§ 66 Abs. 1",
+        "version_valid_from": "2021-01-01",
+        "version_valid_to": "2022-12-31"
+      }
+    ],
+    "relevant_fact_date": "2021-12-31",
+    "source_versions": [{"file": "<placeholder>", "valid_from": "<date>", "valid_to": "<date>"}]
+  }
+]
+- Formatiere die Ausgabe genau als JSON-Liste wie oben, ohne zusätzlichen Text oder Erklärungen.
+
+Vorgängerversion (2007-08-18 bis 2020-01-01):
+
+{
+  "valid_from": "2007-08-18",
+  "valid_to": "2020-01-01",
+  "content": [
+    {
+      "citation": "§ 102 AO Abs. 1",
+      "text": "Die Auskunft können ferner verweigern:"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 1",
+      "text": "Geistliche über das, was ihnen in ihrer Eigenschaft als Seelsorger anvertraut worden oder bekannt geworden ist,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 2",
+      "text": "Mitglieder des Bundestages, eines Landtages oder einer zweiten Kammer über Personen, die ihnen in ihrer Eigenschaft als Mitglieder dieser Organe oder denen sie in dieser Eigenschaft Tatsachen anvertraut haben, sowie über diese Tatsachen selbst,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 3 Buchst. a",
+      "text": "Verteidiger,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 3 Buchst. b",
+      "text": "Rechtsanwälte, Patentanwälte, Notare, Steuerberater, Wirtschaftsprüfer, Steuerbevollmächtigte, vereidigte Buchprüfer,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 3 Buchst. c",
+      "text": "Ärzte, Zahnärzte, Psychologische Psychotherapeuten, Kinder- und Jugendlichenpsychotherapeuten, Apotheker und Hebammen,\nüber das, was ihnen in dieser Eigenschaft anvertraut worden oder bekannt geworden ist,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 4",
+      "text": "Personen, die bei der Vorbereitung, Herstellung oder Verbreitung von periodischen Druckwerken oder Rundfunksendungen berufsmäßig mitwirken oder mitgewirkt haben, über die Person des Verfassers, Einsenders oder Gewährsmanns von Beiträgen und Unterlagen sowie über die ihnen im Hinblick auf ihre Tätigkeit gemachten Mitteilungen, soweit es sich um Beiträge, Unterlagen und Mitteilungen für den redaktionellen Teil handelt; § 160 bleibt unberührt."
+    },
+    {
+      "citation": "§ 102 AO Abs. 2",
+      "text": "1 Den im Absatz 1 Nr. 1 bis 3 genannten Personen stehen ihre Gehilfen und die Personen gleich, die zur Vorbereitung auf den Beruf an der berufsmäßigen Tätigkeit teilnehmen. 2 Über die Ausübung des Rechts dieser Hilfspersonen, die Auskunft zu verweigern, entscheiden die im Absatz 1 Nr. 1 bis 3 genannten Personen, es sei denn, dass diese Entscheidung in absehbarer Zeit nicht herbeigeführt werden kann."
+    },
+    {
+      "citation": "§ 102 AO Abs. 3",
+      "text": "1 Die in Absatz 1 Nr. 3 genannten Personen dürfen die Auskunft nicht verweigern, wenn sie von der Verpflichtung zur Verschwiegenheit entbunden sind. 2 Die Entbindung von der Verpflichtung zur Verschwiegenheit gilt auch für die Hilfspersonen."
+    },
+    {
+      "citation": "§ 102 AO Abs. 4",
+      "text": "1 Die gesetzlichen Anzeigepflichten der Notare und die Mitteilungspflichten der in Absatz 1 Nr. 3 Buchstabe b bezeichneten Personen nach der Zinsinformationsverordnung vom 26. Januar 2004 (BGBl. I S. 128), die zuletzt durch Artikel 4 Abs. 28 des Gesetzes vom 22. September 2005 (BGBl. I S. 2809) geändert worden ist, in der jeweils geltenden Fassung bleiben unberührt. 2 Soweit die Anzeigepflichten bestehen, sind die Notare auch zur Vorlage von Urkunden und zur Erteilung weiterer Auskünfte verpflichtet."
+    }
+  ]
+}
+
+Nachfolgerversion (2020-01-01 bis 2020-09-01):
+
+{
+  "valid_from": "2020-01-01",
+  "valid_to": "2020-09-01",
+  "content": [
+    {
+      "citation": "§ 102 AO Abs. 1",
+      "text": "Die Auskunft können ferner verweigern:"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 1",
+      "text": "Geistliche über das, was ihnen in ihrer Eigenschaft als Seelsorger anvertraut worden oder bekannt geworden ist,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 2",
+      "text": "Mitglieder des Bundestages, eines Landtages oder einer zweiten Kammer über Personen, die ihnen in ihrer Eigenschaft als Mitglieder dieser Organe oder denen sie in dieser Eigenschaft Tatsachen anvertraut haben, sowie über diese Tatsachen selbst,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 3 Buchst. a",
+      "text": "Verteidiger,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 3 Buchst. b",
+      "text": "Rechtsanwälte, Patentanwälte, Notare, Steuerberater, Wirtschaftsprüfer, Steuerbevollmächtigte, vereidigte Buchprüfer,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 3 Buchst. c",
+      "text": "Ärzte, Zahnärzte, Psychologische Psychotherapeuten, Kinder- und Jugendlichenpsychotherapeuten, Apotheker und Hebammen, über das, was ihnen in dieser Eigenschaft anvertraut worden oder bekannt geworden ist,"
+    },
+    {
+      "citation": "§ 102 AO Abs. 1 Nr. 4",
+      "text": "Personen, die bei der Vorbereitung, Herstellung oder Verbreitung von periodischen Druckwerken oder Rundfunksendungen berufsmäßig mitwirken oder mitgewirkt haben, über die Person des Verfassers, Einsenders oder Gewährsmanns von Beiträgen und Unterlagen sowie über die ihnen im Hinblick auf ihre Tätigkeit gemachten Mitteilungen, soweit es sich um Beiträge, Unterlagen und Mitteilungen für den redaktionellen Teil handelt; § 160 bleibt unberührt."
+    },
+    {
+      "citation": "§ 102 AO Abs. 2",
+      "text": "1 Den im Absatz 1 Nr. 1 bis 3 genannten Personen stehen ihre Gehilfen und die Personen gleich, die zur Vorbereitung auf den Beruf an der berufsmäßigen Tätigkeit teilnehmen. 2 Über die Ausübung des Rechts dieser Hilfspersonen, die Auskunft zu verweigern, entscheiden die im Absatz 1 Nr. 1 bis 3 genannten Personen, es sei denn, dass diese Entscheidung in absehbarer Zeit nicht herbeigeführt werden kann."
+    },
+    {
+      "citation": "§ 102 AO Abs. 3",
+      "text": "1 Die in Absatz 1 Nr. 3 genannten Personen dürfen die Auskunft nicht verweigern, wenn sie von der Verpflichtung zur Verschwiegenheit entbunden sind. 2 Die Entbindung von der Verpflichtung zur Verschwiegenheit gilt auch für die Hilfspersonen."
+    },
+    {
+      "citation": "§ 102 AO Abs. 4",
+      "text": "1 Die gesetzlichen Anzeigepflichten der Notare und die Mitteilungspflichten der in Absatz 1 Nr. 3 Buchstabe b bezeichneten Personen nach der Zinsinformationsverordnung vom 26. Januar 2004 (BGBl. I S. 128), die zuletzt durch Artikel 4 Abs. 28 des Gesetzes vom 22. September 2005 (BGBl. I S. 2809) geändert worden ist, in der jeweils geltenden Fassung bleiben unberührt. 2 Soweit die Anzeigepflichten bestehen, sind die Notare auch zur Vorlage von Urkunden und zur Erteilung weiterer Auskünfte verpflichtet. 3 Die Mitteilungspflichten der in Absatz 1 Nummer 3 Buchstabe b bezeichneten Personen hinsichtlich der in § 138f Absatz 3 Satz 1 Nummer 1 und 4 bis 9 bezeichneten Angaben bestehen auch dann, wenn mit diesen Angaben betroffene Nutzer identifizierbar sein sollten."
+    }
+  ]
+}
+[2025-12-04T16:05:24.525622+00:00] Sending prompt to LLM
+[2025-12-04T16:05:29.599787+00:00] LLM returned 1 items
+[2025-12-04T16:05:29.601006+00:00] QA #3: wrote qa_0003.json with status=fail
+[2025-12-04T16:05:29.602145+00:00] Run complete. Files: qa_0001.json, qa_0002.json, qa_0003.json

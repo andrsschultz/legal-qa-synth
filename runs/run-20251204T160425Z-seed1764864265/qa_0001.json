@@ -1,0 +1,60 @@
+{
+  "question_answer_pairs": [
+    {
+      "question_text": "Ein Steuerberater S wird im Rahmen einer Außenprüfung am 15.06.2019 von der Finanzbehörde zur Auskunft über einen von ihm beratenen Mandanten befragt. Der Mandant hat S ausdrücklich von seiner berufsrechtlichen Verschwiegenheitspflicht entbunden. Darf S sich für diesen Zeitpunkt noch auf ein Auskunftsverweigerungsrecht nach der Abgabenordnung berufen?",
+      "answer_text": "Am 15.06.2019 galt die frühere Fassung des § 102 AO. Nach § 102 AO Abs. 3 durften die in Absatz 1 Nr. 3 genannten Personen, zu denen Steuerberater gehören, die Auskunft nicht verweigern, wenn sie von der Verpflichtung zur Verschwiegenheit entbunden sind. Da der Mandant den Steuerberater von der Verschwiegenheitspflicht entbunden hat, konnte sich S am 15.06.2019 nicht wirksam auf ein Auskunftsverweigerungsrecht berufen und musste die Auskunft erteilen.",
+      "legal_basis": [
+        {
+          "law": "AO",
+          "citation": "§ 102 AO Abs. 1 Nr. 3 Buchst. b",
+          "version_valid_from": "2007-08-18",
+          "version_valid_to": "2020-01-01"
+        },
+        {
+          "law": "AO",
+          "citation": "§ 102 AO Abs. 3",
+          "version_valid_from": "2007-08-18",
+          "version_valid_to": "2020-01-01"
+        }
+      ],
+      "relevant_fact_date": "2019-06-15",
+      "source_versions": [
+        {
+          "file": "§102_AO_Fassung_2007-08-18_bis_2020-01-01",
+          "valid_from": "2007-08-18",
+          "valid_to": "2020-01-01"
+        },
+        {
+          "file": "§102_AO_Fassung_2020-01-01_bis_2020-09-01",
+          "valid_from": "2020-01-01",
+          "valid_to": "2020-09-01"
+        }
+      ]
+    }
+  ],
+  "source_versions": [
+    {
+      "file": "data/AO/s102/ao_s102_until_2020-01-01.json",
+      "valid_from": "2007-08-18",
+      "valid_to": "2020-01-01"
+    },
+    {
+      "file": "data/AO/s102/ao_s102_until_2020-09-01.json",
+      "valid_from": "2020-01-01",
+      "valid_to": "2020-09-01"
+    }
+  ],
+  "legal_basis": [
+    {
+      "law": "AO",
+      "citation": "§ 102 AO",
+      "version_valid_from": "2020-01-01",
+      "version_valid_to": "2020-09-01"
+    }
+  ],
+  "relevant_fact_date": "2020-05-02",
+  "validation": {
+    "status": "pass",
+    "issues": []
+  }
+}
